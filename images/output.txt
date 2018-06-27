@@ -1,0 +1,187 @@
+Connected to 176.28.103.205.
+220 ::ffff:176.28.103.205 FTP server ready
+Name (176.28.103.205:p): 331 Password required for paulinoposada
+230 User paulinoposada logged in
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp> ls
+227 Entering Passive Mode (176,28,103,205,247,148)
+150 Opening BINARY mode data connection for file list
+drwxr-x---   2 root     pemsrv       8192 Jun 22 21:02 log
+drwxr-x---   2 paulinoposada pemsrv       4096 May  9  2017 pear
+-rwxr-x---   1 paulinoposada pemsrv        659 May  9  2017 .pearrc
+drwxr-x---   2 48       48           4096 May  9  2017 tmp
+drwxr-xr-x  11 root     0            4096 May  9  2017 webspace
+226 Transfer complete
+ftp> cd webspace
+250 CWD command successful
+ftp> ls
+227 Entering Passive Mode (176,28,103,205,240,61)
+150 Opening BINARY mode data connection for file list
+drwxr-x---   2 root     0            4096 May  9  2017 certs
+drwxr-x---   2 paulinoposada pemsrv       4096 May  9  2017 cgi-bin
+drwxr-x---   2 root     0            4096 May  9  2017 conf
+drwxr-xr-x   2 root     pemsrv       4096 May  9  2017 error_docs
+-r--r-----   1 48       pemsrv        644 May  9  2017 .htaccess
+drwxr-x---   5 paulinoposada pemsrv       4096 Feb  4 12:53 httpdocs
+drwxr-x---   2 root     pemsrv       4096 May  9  2017 pd
+dr-x--x---   2 paulinoposada pemsrv       4096 May  9  2017 siteapps
+drwxr-x---   2 root     pemsrv       8192 Jun 22 21:02 webstat
+drwxr-x---   2 root     pemsrv       4096 May  9  2017 webstatssl
+226 Transfer complete
+ftp> cd httpdocs
+250 CWD command successful
+ftp> ls
+227 Entering Passive Mode (176,28,103,205,244,66)
+150 Opening BINARY mode data connection for file list
+drwxr-xr-x   4 paulinoposada pemcln       4096 May 30  2017 2641397-0.web-hosting.es
+drwxr-xr-x   2 paulinoposada pemcln       4096 May  9  2017 images
+drwxr-xr-x   5 paulinoposada pemcln       4096 Feb  4 12:53 paulinoposada.com
+226 Transfer complete
+ftp> cd paulinoposada.com
+250 CWD command successful
+ftp> ls
+227 Entering Passive Mode (176,28,103,205,255,170)
+150 Opening BINARY mode data connection for file list
+drwxr-xr-x   2 paulinoposada pemcln       4096 Jan 31 08:56 images
+-rw-r--r--   1 paulinoposada pemcln       1905 Mar 22 09:03 index.html
+drwxr-xr-x   2 root     0            4096 May  9  2017 .protect
+drwxr-xr-x  12 paulinoposada pemcln       4096 Jan 14 19:02 websites
+226 Transfer complete
+ftp> cd images
+250 CWD command successful
+ftp> ls
+227 Entering Passive Mode (176,28,103,205,251,131)
+150 Opening BINARY mode data connection for file list
+-rw-r--r--   1 paulinoposada pemcln        821 Oct 11  2017 eu_flag.png
+-rw-r--r--   1 paulinoposada pemcln       4607 May 20  2017 logo.jpg
+-rw-r--r--   1 paulinoposada pemcln      26276 Oct 11  2017 paul_ber_2.jpg
+-rw-r--r--   1 paulinoposada pemcln      45112 Oct 11  2017 paul_ber.jpg
+-rw-r--r--   1 paulinoposada pemcln      26532 Oct  1  2017 paulino.jpg
+-rw-r--r--   1 paulinoposada pemcln      45115 May 20  2017 paulino_profile_berlin.jpg
+-rw-r--r--   1 paulinoposada pemcln      12152 Oct  1  2017 paulino_red.jpg
+-rw-r--r--   1 paulinoposada pemcln       2103 May 20  2017 site_construction.png
+-rw-r--r--   1 paulinoposada pemcln      61394 Nov  7  2017 vuelo.png
+-rw-r--r--   1 paulinoposada pemcln      11008 Dec 23  2017 weihnachtsbaum.jpeg
+-rw-r--r--   1 paulinoposada pemcln     914075 Sep  1  2017 wheres_pau.jpg
+226 Transfer complete
+ftp> mget* *[C
+mget weihnachtsbaum.jpeg? y
+227 Entering Passive Mode (176,28,103,205,254,213)
+150 Opening BINARY mode data connection for weihnachtsbaum.jpeg (11008 bytes)
+226 Transfer complete
+11008 bytes received in 0.02 secs (469.2 kB/s)
+mget vuelo.png? y
+227 Entering Passive Mode (176,28,103,205,241,120)
+150 Opening BINARY mode data connection for vuelo.png (61394 bytes)
+226 Transfer complete
+61394 bytes received in 0.19 secs (309.2 kB/s)
+mget paul_ber_2.jpg? y
+227 Entering Passive Mode (176,28,103,205,253,223)
+150 Opening BINARY mode data connection for paul_ber_2.jpg (26276 bytes)
+226 Transfer complete
+26276 bytes received in 0.11 secs (235.4 kB/s)
+mget eu_flag.png? y
+227 Entering Passive Mode (176,28,103,205,239,197)
+150 Opening BINARY mode data connection for eu_flag.png (821 bytes)
+226 Transfer complete
+821 bytes received in 0.01 secs (86.4 kB/s)
+mget paulino.jpg? y
+227 Entering Passive Mode (176,28,103,205,238,69)
+150 Opening BINARY mode data connection for paulino.jpg (26532 bytes)
+226 Transfer complete
+26532 bytes received in 0.11 secs (238.7 kB/s)
+mget paulino_red.jpg? y
+227 Entering Passive Mode (176,28,103,205,253,150)
+150 Opening BINARY mode data connection for paulino_red.jpg (12152 bytes)
+226 Transfer complete
+12152 bytes received in 0.03 secs (463.0 kB/s)
+mget wheres_pau.jpg? y
+227 Entering Passive Mode (176,28,103,205,239,201)
+150 Opening BINARY mode data connection for wheres_pau.jpg (914075 bytes)
+226 Transfer complete
+914075 bytes received in 1.34 secs (667.2 kB/s)
+mget site_construction.png? y
+227 Entering Passive Mode (176,28,103,205,246,99)
+150 Opening BINARY mode data connection for site_construction.png (2103 bytes)
+226 Transfer complete
+2103 bytes received in 0.01 secs (254.4 kB/s)
+mget paulino_profile_berlin.jpg? y
+227 Entering Passive Mode (176,28,103,205,235,168)
+150 Opening BINARY mode data connection for paulino_profile_berlin.jpg (45115 bytes)
+226 Transfer complete
+45115 bytes received in 0.18 secs (245.9 kB/s)
+mget logo.jpg? y
+227 Entering Passive Mode (176,28,103,205,235,47)
+150 Opening BINARY mode data connection for logo.jpg (4607 bytes)
+226 Transfer complete
+4607 bytes received in 0.01 secs (312.8 kB/s)
+mget paul_ber.jpg? y
+227 Entering Passive Mode (176,28,103,205,244,139)
+150 Opening BINARY mode data connection for paul_ber.jpg (45112 bytes)
+226 Transfer complete
+45112 bytes received in 0.17 secs (261.8 kB/s)
+ftp> y
+?Invalid command
+ftp> cd ..
+250 CWD command successful
+ftp> ls
+227 Entering Passive Mode (176,28,103,205,239,71)
+150 Opening ASCII mode data connection for file list
+drwxr-xr-x   2 paulinoposada pemcln       4096 Jan 31 08:56 images
+-rw-r--r--   1 paulinoposada pemcln       1905 Mar 22 09:03 index.html
+drwxr-xr-x   2 root     0            4096 May  9  2017 .protect
+drwxr-xr-x  12 paulinoposada pemcln       4096 Jan 14 19:02 websites
+226 Transfer complete
+ftp> get index.html
+local: index.html remote: index.html
+227 Entering Passive Mode (176,28,103,205,250,125)
+150 Opening BINARY mode data connection for index.html (1905 bytes)
+226 Transfer complete
+1905 bytes received in 0.00 secs (928.8 kB/s)
+ftp> ls
+227 Entering Passive Mode (176,28,103,205,254,245)
+150 Opening ASCII mode data connection for file list
+drwxr-xr-x   2 paulinoposada pemcln       4096 Jan 31 08:56 images
+-rw-r--r--   1 paulinoposada pemcln       1905 Mar 22 09:03 index.html
+drwxr-xr-x   2 root     0            4096 May  9  2017 .protect
+drwxr-xr-x  12 paulinoposada pemcln       4096 Jan 14 19:02 websites
+226 Transfer complete
+ftp> cd websites
+250 CWD command successful
+ftp> ls
+227 Entering Passive Mode (176,28,103,205,248,205)
+150 Opening ASCII mode data connection for file list
+drwxr-xr-x   7 paulinoposada pemcln       4096 Feb  2 18:50 deutsch
+drwxr-xr-x   2 paulinoposada pemcln       4096 Jan  7 20:00 draw
+drwxr-xr-x   4 paulinoposada pemcln       4096 Sep 18  2017 fp_basica
+drwxr-xr-x   2 paulinoposada pemcln       4096 Jul  5  2017 instalacions_domotiques
+drwxr-xr-x   4 paulinoposada pemcln       4096 May 22  2017 lucia
+drwxr-xr-x   2 paulinoposada pemcln       4096 Jul  5  2017 maquines_electriques
+drwxr-xr-x   5 paulinoposada pemcln       4096 Mar 26 20:52 paulino
+drwxr-xr-x   2 paulinoposada pemcln       4096 Mar 20 08:05 ramis
+drwxr-xr-x   5 paulinoposada pemcln       4096 Jun 27  2017 tecnosegon
+drwxr-xr-x   2 paulinoposada pemcln       4096 May 26  2017 tic_tac
+226 Transfer complete
+ftp> cd paulino
+250 CWD command successful
+ftp> ls
+227 Entering Passive Mode (176,28,103,205,246,153)
+150 Opening ASCII mode data connection for file list
+-rw-r--r--   1 paulinoposada pemcln       1248 Jul  8  2017 blogs.html
+drwxr-xr-x   2 paulinoposada pemcln       4096 Jun 19 18:10 books
+-rw-r--r--   1 paulinoposada pemcln       2598 Jun 19 18:12 books.html
+-rw-r--r--   1 paulinoposada pemcln       1710 Nov  6  2017 catalunya.html
+-rw-r--r--   1 paulinoposada pemcln        678 Feb  2 19:02 deutsch.html
+-rw-r--r--   1 paulinoposada pemcln        830 Aug 16  2017 linux_cli.html
+drwxr-xr-x   2 paulinoposada pemcln       4096 Nov 14  2017 mac
+-rw-r--r--   1 paulinoposada pemcln       1103 Mar 20 08:45 miscellaneous.html
+-rw-r--r--   1 paulinoposada pemcln       2622 Feb 24 23:08 movies.html
+drwxr-xr-x   2 paulinoposada pemcln       4096 Jun 18 20:16 music
+-rw-r--r--   1 paulinoposada pemcln       8699 Jun 18 20:18 music.html
+226 Transfer complete
+ftp> mget *[K[K[K[K[K[Kpwd
+421 No transfer timeout (120 seconds): closing control connection
+ftp> pwd[K[K[K176.28.103.205
+?Invalid command
+ftp> bye
