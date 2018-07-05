@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<title>Web Paulino</title>
+		<!--link type="text/css" rel="stylesheet" href="tecno.css" /-->
+		
+	</head>
+
+
+	<body>
+		<!-- -->
+	
+		
+				
+		
+
+		<p>
+		
+		<table style="width:100%">
+  		<tr>
+		<td>
+			
+    			<img src="./images/paul_ber.jpg" alt="paulino berlin" /></td>
+    					<td>
+				<ul>
+			
+				
+				<li><a href="./websites/paulino/blogs.html">
+				Webs and blogs</a>
+				</li>
+	
+	
+				<li><a href="./websites/paulino/books.html">
+				Books</a>
+				</li>
+
+				<li><a href="./websites/paulino/music.html">
+				Music</a>
+				</li>
+
+
+				<li><a href="./websites/paulino/movies.html">
+				Movies</a>
+				</li>
+
+				<li><a href="./websites/paulino/opos.html">
+				Opos</a>
+				</li>
+
+	
+				<li><a href="./websites/paulino/miscellaneous.html">Miscellaneous</a>
+				</li>
+	
+
+
+			
+				</ul>
+			</td>
+    	
+			
+    			
+
+
+			<tr>
+    			<td>
+			paulinoposada@gmail.com
+			</br>
+			</td>
+			<td>
+
+			<!-- 
+<iframe style="border:0" src="http://api.diariodemallorca.es/gmv2/widget/galeria-1c/9/pT_videos/pG_597a39446abc8637b3947c23" width="320px" height="187px" scrolling="no"></iframe>
+-->
+		
+			</td>
+  		</tr>
+  		
+</table> 
+			
+		</p>
+	</body>
+</html>
