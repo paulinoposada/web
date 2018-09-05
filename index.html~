@@ -6,7 +6,7 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 		<title>Web Paulino</title>
-		<!--link type="text/css" rel="stylesheet" href="tecno.css" /-->
+		
 		
 	</head>
 
@@ -28,7 +28,10 @@
     					<td>
 				<ul>
 			
-				
+				<li><a href="../websites/fp_basica/fpb_2/index_fpb.html">
+				FP B&agrave;sica - Ci&egrave;ncies aplicades</a>
+				</li>
+			
 				<li><a href="./websites/paulino/blogs.html">
 				Webs and blogs</a>
 				</li>
