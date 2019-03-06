@@ -1,22 +1,61 @@
-Menorca 
-5-7/04
+<html>
+	<head>
 
-Ferry Alcudia Ciutadella, Ciutadella Alcudia - two way 11 euros with bike
+		<title>Menorca</title>
+		
+		
+	</head>
 
-Friday 05/04
-05:46 Train Palma Sa Pobla with bicicle
-06:37 Sa Pobla
+	<body>
+		Trip to Menorca 
+		</br>
+		</br>
+		Date 5-7/04
+		</br>
+		</br>
+		Planning
+		Ferry Alcudia Ciutadella, Ciutadella Alcudia - two way 11 euros with bike
+		</br>
+		</br>
+		Friday 05/04
+		</br>
+		</br>
+		Starting from Palma by car, taking bicicle along
+		
+		</br>
+		</br>
+		06:30 Palma
+		</br>
 
-Sa Pobla Alcudia by bike. Estimated arrival in Alcudia is 7:40
+		07:30 Alcudia
+		</br>
 
+		Ferry Alcudia Ciutadella  08:00 Transmediterranea
+		</br>
+		</br>
 
-05/04 - Alcudia Ciutadella  08:00 Transmediterranea
+		
+		<a href="https://www.injovemenorca.es/ca/allotjaments/alberg-sa-vinyeta">Sa Vinyeta Alberg Juvenil</a>
+		</br>
+		</br>
+		<img src="alberg_sa_vinyeta.png" alt="mapa alberg"> 
 
+		</br>
+		</br>
+		
+		
+		<a href="https://www.descobreixmenorca.com/en/cami-de-cavalls-3/">Cam&iacute; de Cavalls</a>
+		</br>
+		</br>
 
-Sa Vinyeta Alberg Juvenil
-https://www.injovemenorca.es/ca/allotjaments/alberg-sa-vinyeta
+		Sunday 07/04
+		</br>
+		20:15 Ferry Ciutadella Alcudia
+		</br>
+		22:00 Alcudia
+		</br>
+		Back to Palma by car
+	</body>
+</html>
 
-
-Cam&í de Cavalls
-https://www.descobreixmenorca.com/en/cami-de-cavalls-3/
 
