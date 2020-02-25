@@ -7,45 +7,47 @@ Gb means G flat, that is, a semitone below G
 
 
 Intro 
-| 1U2U3U4U | 1U2U3U4U | 1U2U3U4U | 1U2U3U4U |
+   | 1U2U3U4U          | 1U2U3U4U | 1U2U3U4U                   | 1U2U3U4U |
 
 
-   | 1U 2U3U  4  U  | 1U2U3U4U |  1U    2   U3    U   4U    | 1U2U3U4U | 
-   |    Gb    A  G/ |   D      |   D    E   D     E    D    |   Gb     | 
-   |    Es- tic tan |  sol     |  Quan tu  no es-tàs  amb   |   mi     | 
+   | 1U 2U3U  4  U     | 1U2U3U4U          |  1U    2   U3    U   4U     |       1U2U3U4U | 
+   |    Gb    A  G/    |   D               |   D    E   D     E    D     |         Gb     | 
+   |    Es- tic tan    |  sol              |  Quan tu  no es-tàs  amb    |         mi     | 
 chromatic
-       -6/   -7 -6/ |  -5      |   -5   6   -5    6   -5    |   -6/    | 
+   |   -6/   -7 -6/    |  -5               |   -5   6   -5    6   -5     |         -6/    | 
 
 
-| 1U   2U3   U  4U  | 1U2U3U4U | 1U   2   U   3  U     4U    |  1U2U3U4U | 
-|        A   B   D  |     F    |      D   E   D  E   D---D   |    Gb     | 
-|     Jo es-tic tan |   sol    |     Quan tu  no es-tàs  amb | mi -------|
+   | 1U   2U3   U  4U  | 1U2U3U4U          | 1U   2   U   3  U     4U    |       1U2U3U4U | 
+   |        A   B   D  |     F             |      D   E   D  E   D---D   |         Gb     | 
+   |     Jo es-tic tan |   sol             |     Quan tu  no es-tàs  amb |      mi -------|
 chromatic
-|      -3   -4  -5  |   -6     |      -5  6  -5   6    -5    |    -6/    |
+   |      -3   -4  -5  |   -6              |      -5  6  -5   6    -5    |         -6/    |
 
 
 
 
-| 1U   2U 3    U4U  | 1   U   2  U3U4U  | 1U   2U 3U4  U  |  1  U  2U 3U4U |
-          A     A   | A   A   A    G    |      A   G   F     A  G   F  D   |
-|         Que   sé  | bén de re   cert  |     Que  me  po | dri a  mo-rir  | 
+   | 1U   2U 3    U4U  | 1   U   2  U3U4U  | 1U   2U 3U4  U               |  1  U  2U 3U4U |
+   |      A     A      | A   A   A    G    |      A   G   F               |  A  G   F  D   |
+   |         Que   sé  | bén de re   cert  |     Que  me  po              | dri a  mo-rir  | 
 chromatic
-|          -7  -7   | -7  -7  -7   7    |     -7   7  -6  | 7  -7  -6 -5   |
+   |          -7  -7   | -7  -7  -7   7    |     -7   7  -6               | 7  -7  -6 -5   |
 
 
 
-| 1U2U3U4U | 1U  2   U    3U4U  | 1U2U   3   U  4U   | 1U  2U   3U4U  | 
-           | Gb  A   Gb    B    |   A    A   A   A   | Gb  Gb    Gb   |
-         T'| es  -tim      ta   |   nt  Que em   sem |bla tornar boig |
-           |-6/  -7  -6/   -8   |   -7  -7  -7   -7  |-6/  -6/   -6/  |
+
+   | 1U2U3U4U          | 1U  2   U    3U4U | 1U2U   3   U  4U             | 1U  2U   3U4U  | 
+                       | Gb  A   Gb    B   |   A    A   A   A             | Gb  Gb    Gb   |
+            T'         | es  -tim      ta  |   nt  Que em   sem           |bla tornar boig |
+chromatic
+                       |-6/  -7  -6/   -8  |   -7  -7  -7   -7            |-6/  -6/   -6/  |
  
 
 
-| 1U2U3U 4U | 1U    2U    3U4U | 1U2U   3   U  4U   | 1  U   2U 3U4U   |
-          A |  B     D     F   |   F    A   G   F   | A  G    F   D    |
-|        Jo |t'es  -tim    ta  |   nt  Que  em  sem | bla tornar  boig |
+   | 1U2U3U         4U | 1U    2U    3U4U  | 1U2U   3   U  4U             | 1  U   2U 3U4U   |
+                    A  |  B     D     F    |   F    A   G   F             | A  G    F   D    |
+   |                Jo |t'es  -tim    ta   |   nt  Que  em  sem           | bla tornar  boig |
 chromatic
-|        -3 | -4    -5     -6  |  -6   -7   7  -6   | -7 7  -6   -5    |
+   |                -3 | -4    -5     -6  |  -6   -7   7  -6              | -7 7  -6   -5    |
 
 
 
