@@ -1,0 +1,32 @@
+Something - George Harrison - key C 
+
+Version Charlie McCoy - https://paulinoposada.github.io/web/websites/paulino/music/something_harmonica_carlie_mccoy.mp3
+
+Tabs for chromatic and diatonic harmonicas
+
+
+
+| 1U 2U 3U 4U | 1U 2U  3U 4U |
+|----------   |              |
+|             |              |
+|             |              |
+|   Intro     |   Intro      |
+
+
+
+|  1     U  2   U  3U   4    U   | 1U2U3U4U| 1     U2    U    3U   4    U   | 1U     2U3U4U|
+|  C     C  C   C   C   C    B---|----B    |       A#   A#    A#   C    D   |  C        B  |
+|  4     4  4   4   4   4   -4   |   -4    |      -3#  -3#   -3#   5   -5   |  4       -4  |
+|                                |         |                                |              |
+| Some-thing in the way she moves|         |    attracts me  like  no other | lover        | 
+
+
+
+| 1       U  2   U  3U   4    U  |1U  2U3U4U|   1      U        2      U    3U4U| 1     U     2       U        3U4U|
+| F       F  F   F   E   F   D B |    G     | G  A      C C   D    A   C        | E   D   C  D  E    C  A          |
+|-6      -6 -6  -6   6  -6  -5-4 |    3     | 3 -3      5 5  -5   -3   5        | 6  -5   5 -5  6    4 -3          |
+|                                |          |                                   |                                  |
+| Some-thing in the way she wooes|me        | I don't wanna leave her now       |You know I believe and how        |
+
+
+
