@@ -13,9 +13,9 @@ Tabs for chromatic and diatonic harmonicas
 
 
 | 1U  2U  3U   4U | 1U 2U 3U 4U            | 1U 2U 3U 4U  | 1U 2U  3U 4U     | 1U 2   U  3U4U      | 1U2U3U4U|
-|  E  D#  D       |  D  E G# C             |  D      C    |  B  A#     G     |  A  D  B    A       |    D    |
-|  6 -5# -5       | -5  6 7# 8             | -9      9    | -8 -7#     7     | -7 -9 -8   -7       |   -9    |
-|  5     -4       | -4  5 6  7             | -8      7    | -7  -6     -6     | -6 -8 -7   -6       |   -8    |
+|  E  D#  D       |  D  E G# C             |  D      C    |  B  A#     A     |  A  D  B    A       |    D    |
+|  6 -5# -5       | -5  6 7# 8             | -9      9    | -8 -7#    -7     | -7 -9 -8   -7       |   -9    |
+|  5  -4/-4       | -4  5 6  7             | -8      7    | -7         6     | -6 -8 -7   -6       |   -8    |
 |Take my lips     |  I     never           |  use   them  | Take my   arms   | I wanna   lose      |them     |
 
 
@@ -28,8 +28,8 @@ Tabs for chromatic and diatonic harmonicas
 
 
 | 1U  2U  3U   4U | 1U   2U   3U     4U    | 1U 2U    3U 4U | 1U 2U      3U4U| 1U 2   U     3U4U   | 1U2U3U4U |
-|  E  D#  D       |  D  E G# C             |  D      C      |  B  A#    G    |  A  D  B    A       |    D
-|  6 -5# -5       | -5  6 7# 8             | -9      9      | -8 -7#    7    | -7 -9 -8   -7       |   -9     |
+|  E  D#  D       |  D  E G# C             |  D      C      |  B  A#    A    |  A  D  B    A       |    D
+|  6 -5# -5       | -5  6 7# 8             | -9      9      | -8 -7#   -7    | -7 -9 -8   -7       |   -9     |
 
 |You took the part|     that once    was   | my heart     So| why not        | take all of         |me.       |
 

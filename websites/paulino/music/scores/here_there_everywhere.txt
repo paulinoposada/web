@@ -1,4 +1,4 @@
-Something - John Lennon, Paul McCartney - key C 
+Something - John Lennon, Paul McCartney - key G
 
 https://paulinoposada.github.io/web/websites/paulino/music/here_there.mp3
 
@@ -10,13 +10,32 @@ M1
 |    D   G   B  D  D   D     |    F  A#  D  F   D#  D   |      D      |
 |   -1   3  -4 -5 -5  -5     |   -2 -3# -5 -6 -5# -5    |     -5      |
 |                            |                          |             |
-|    To lead a bet-ter life  |    I need my love to be  |    here     |
+|    To lead a bet-ter life  |    I need my love to be  |    here.    |
 M4
 10s
-| 1U 2U 3U 4U | 1   U     2   U3  U   4    U | 1U 2U 3U 4U |
-|     G       | B   D     A   G  C   E    D  |      D      |
-|             |                              |             |
+| 1U 2U 3U 4U | 1   U     2   U3  U   4    U | 1U 2U 3U 4U | 1    U   2  U3   U    4 U | 1 U  2  U3U   4U |
+|     G       | B   D     A   G  C   E    D  |      D      | B    C   D   E   G    A B---B B  B   B       |
+|     3       |-4  -5    -7   7  5   6   -5  |     -5      |-4    5  -5   6   3   -3 -4 -4 -4 -4  -4      |
 |                                              
-|   Here      | mak-ing each day of the year-|-------      |changing my life with a wave of her hand
+|   Here      | mak-ing each day of the year-|-------      |chang-ing my life with a  wave of her hand.   |
+M8
+25s
+|  1  U  2 U3U  4 U  | 1 U    2      U3    U4     U   | 1U 2U 3U 4U |
+|  B  C  B  C   A G----G A    B      F#    E      A--------A        |
+| -4  4 -4  4  -3 3----3-3   -4     -6#    6     -3 ----- -3        |
 
+| No-bod-y can de-ny |  that there's some-thing there.|             |
+M11
+34s
+| 1U 2U 3U 4U |   1   U   2   U3    U     4    U  | 1U 2U 3U 4U | 1    U   2  U3    U   4  U | 1  U  2  U3U   4U |
+|      G          B   D   A   G     C     E    D---------D      | B    C   D   E    G   A  B---B  B  B   B       |
+|      3      |  -4  -5  -6   6     5     6   -5  ----  -5      |-4    5  -5   6    3  -3  -4 -4 -4 -4  -4       |
 
+|    There,   | run-ning my arms through her hair,|             |both  of  us think-ing how good  it can be.
+M39
+48s
+|  1    U   2 U3U   4    U  | 1     U  2    U3   U4    U   | 1U 2U 3U 4U |
+|  B    C   B  C    B    A  | G     A  B    F#   E     A--------A        |
+| -4    4  -4  4   -4    -3 | 3    -3 -4   -6#   6     -3 ---  -3        |
+
+| Some-one is speak-ing, but | she does-n't know he's there.             |
