@@ -34,4 +34,9 @@ Tabs for chromatic and diatonic harmonicas
 |You took the part|     that once    was   | my heart     So| why not        | take all of         |me.       |
 
 
+Rif
+
+E  F#  A  C C# E  F# C#  A
+6 -6# -7  9 9# 6 -6# 9# -7
+
 
