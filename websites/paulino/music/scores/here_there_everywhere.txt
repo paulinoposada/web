@@ -40,9 +40,16 @@ M39
 
 | Some-one is speak-ing, but | she does-n't know he's there.             |
 M42
-
+55s
 | 1U2U 3  U  4   U   |  1   U 2U3U   4  U | 1     U   2   U 3   U  4  U  | 1   U   2U3U4U | 
 |   A     A  A#   C  |  D   F   D    C  A#| C     D   D#  C A   A  A# C  | D   A#   G     |
-|   -3    -3 -3#   5 | -5  -6  -5    4 -3#| 5    -5  -5#  4-3  -3 -3# 4  |-5  -6#   3     |
+|  -3    -3 -3#   5  | -5  -6  -5    4 -3#| 5    -5  -5#  4-3  -3 -3# 4  |-5  -3#   3     |
 
 |        I want her  | eve-ry where and if|she`ś be-side me I know I need| ne-ver care.   |
+M46
+65s
+| 1   U   2   U   3  U  4    U  | 1   U2   U3U4U |  1    U    2    U3  U  4   U   |
+| C   D   D#  C   A  A  A#   C  | D   B      G   |  B    D    A    G   C  E   D   |
+| 5  -5  -5#  4  -3 -3 -3#   4  |-5  -4      3   | -4   -5   -7    7   5  6  -5   |
+
+|But to love her is to need her | ev'-ry-  where | Know-ing that love is to share |
