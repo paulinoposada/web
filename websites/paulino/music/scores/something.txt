@@ -1,9 +1,5 @@
 Something - George Harrison - key C 
 
-Version Charlie McCoy - https://paulinoposada.github.io/web/websites/paulino/music/something_harmonica_carlie_mccoy.mp3
-
-Tabs for chromatic and diatonic harmonicas
-
 M1
 0s
 | 1U 2U 3U 4U | 1U 2U  3U 4U |
@@ -24,7 +20,7 @@ M7
 22s
 | 1       U  2   U  3U   4    U  |1U  2U3U4U|   1        U        2      U      3U4U| 1     U     2       U        3U4U| 1U2U3U4U|
 | D       D  D   D   C   D  B A  |    G     | G  A      C C     D    A   C          | E   D   C  D  E    C  A          |         |
-|-5      -5 -5  -5   5  -5 -4 -3 |    3     | 3 -3      5 5    -5   -3   5          | 6  -5   5 -5  6    4 -3          |         |
+|-5      -5 -5  -5   5  -5 -4 -3 |    3     | 3 -3      5 5    -5 5 -3   5          | 6  -5   5 -5  6    4 -3          |         |
 |                                |          |                                       |                                  |         |
 | Some-thing in the way she wooes|me        | I don't wanna     leave her now       |You know I believe and how        |         |
 
@@ -57,7 +53,7 @@ M22
 M26
 90s
 | 1U  2      U    3    U    4   U   | 1U 2U 3U    4U    |  1U    2U3U       4U  | 1U 2U 3U 4U|  + 9 measures instrumental
-|                                   |                   |                       |            |
+|     5#     6    5#   6 5# 6 -6#    |  5#     -(6#6#6#)| 6-5     7-6#          |  6         |
 |                                   |                   |                       |            |
 |                                   |                   |                       |            |
 |     You stick around now  if may  | show       I don't| know      I      don't| know       |
@@ -81,5 +77,87 @@ M39
 | Something in the things she shows me      | I don't wanna leave her now,          | you know I believe and how
 
 
+
+Something
+
+Version Charlie McCoy - https://paulinoposada.github.io/web/websites/paulino/music/something_harmonica_carlie_mccoy.mp3
+
+Tabs for chromatic and diatonic harmonicas
+
+M1
+0s
+| 1U 2U 3U 4U | 1U 2U  3U 4U |
+|----------   |              |
+|             |              |
+|             |              |
+|   Intro     |   Intro      |
+
+M3
+7s
+|  1     U  2   U  3U   4    U   | 1U2U3U4U| 1     U2    U    3U   4    U   | 1U     2U3U4U|
+|  C     C  C   C   C   C    B---|----B    |       A#   A#    A#   C    D   |  C        A  |
+|  4     4  4   4   4   4   -4   |   -4    |      -3#  -3#   -3#   5   -5   |  4       -3  |
+|                                |         |                                |              |
+| Some-thing in the way she moves|         |    attracts me  like  no other | lover        | 
+
+M7
+22s
+| 1       U  2   U  3U   4    U  |1U  2U3U4U|   1        U        2      U      3U4U| 1     U     2       U        3U4U| 1U2U3U4U|
+| D       D  D   D   C   D  B A  |    G     | G  A      C C     D    A   C          | E   D   C  D  E    C  A          |         |
+|-5      -5 -5  -5   5  -5 -4 -3 |    3     | 3 -3      5 5    -5 5 -3   5          | 6  -5   5 -5  6    4 -3          |         |
+|                                |          |                                       |                                  |         |
+| Some-thing in the way she wooes|me        | I don't wanna     leave her now       |You know I believe and how        |         |
+
+M12
+40s
+|  1     U  2   U  3U   4    U   | 1U2U3U4U| 1     U2    U    3U   4    U   | 1U     2U3U4U|
+|  C     C  C   C   C   C    B---|----B    |       A#   A#    A#   C    D   |  C        A  |
+|  4     4  4   4   4   4   -4   |   -4    |      -3#  -3#   -3#   5   -5   |  4       -3  |
+|                                |         |                                |              |
+| Some where in her smile she knows              That I don't need no other | lover
+
+M16
+55s
+| 1       U  2   U  3U   4    U  |1U  2U3U4U|   1        U        2      U      3U4U| 1     U     2       U        3U4U| 1U2U3U4U| 1U2U3U4U|
+| D       D  D   D   C   D  B A  |    G     | G  A      C C     D    A   C          | E   G   E  G  E    D   C   D  B    |         |         |
+|-5      -5 -5  -5   5  -5 -4 -3 |    3     | 3 -3      5 5    -5   -3   5          | 6   7   6  7  6    -5  5  -5 -4         |         |         |
+|                                |          |                                       |                                  |         |         |
+| Something in her style that shows me      | I don't wanna leave her now,          | you know I believe and how
+
+
+M22
+76s
+| 1U  2      U    3    U    4   U   | 1U 2U 3U    4U    |  1U    2U3U       4U  | 1U 2U 3U 4U|
+|     C#     E    C#   E C# E  F#    |  C#        F#F#F#| E D     G F#          |  E         |
+|     5#     6    5#   6 5# 6 -6#    |  5#     -(6#6#6#)| 6-5     7-6#          |  6         |
+|                                   |                   |                       |            |
+|     Your asking me where  my love | goes      I don't | know     I      don't | know       |
+
+
+M26
+90s
+| 1U  2      U    3    U    4   U   | 1U 2U 3U    4U    |  1U    2U3U       4U  | 1U 2U 3U 4U|  + 9 measures instrumental
+|     5#     6    5#   6 5# 6 -6#    |  5#     -(6#6#6#)| 6-5     7-6#          |  6         |
+|                                   |                   |                       |            |
+|                                   |                   |                       |            |
+|     You stick around now  if may  | show       I don't| know      I      don't| know       |
+
+
+
+M39
+136s
+|  1     U  2   U  3U   4    U    | 1U2U3U4U          | 1   U    2    U    3U    4    U   | 1U     2U3U4U|
+|  G     A  C   C   C   D  C  A C | E  D C  D E C  A  |     A#   A#    A#   C    D        |  C        A  |
+|  3    -3  4   4   4  -5  4 -3 4 | 6 -5 5 -5 6 5 -3  |    -3#  -3#   -3#   5   -5        |  4       -3  |
+|                                 |                   |                                   |              |
+| Some-thing in the way she knows |    and   all   I   haveto do is    think of her  |
+
+
+
+| 1       U  2   U  3U   4    U  |1U  2U3U4U|   1        U        2      U      3U4U| 1     U     2       U        3U4U| 1U2U3U4U| 1U2U3U4U|
+| D       D  D   D   C   D  B A  |    G     | G  A      C C     D    A   C          | E   D   C  D  E    C  A          |         |         |
+|-5      -5 -5  -5   5  -5 -4 -3 |    3     | 3 -3      5 5    -5   -3   5          | 6  -5   5 -5  6    4 -3          |         |         |
+|                                |          |                                       |                                  |         |         |
+| Something in the things she shows me      | I don't wanna leave her now,          | you know I believe and how
 
 
