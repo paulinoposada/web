@@ -2,11 +2,11 @@ Something - George Harrison - key C
 
 M1
 0s
-| 1U 2U 3U 4U | 1U 2U  3U 4U |
-|----------   |              |
-|             |              |
-|             |              |
-|   Intro     |   Intro      |
+|      1U     | 1 U  2  U3 U4 U  |
+|             | A C  A  A#  B C  |
+|             | -3 4 -3 -3# -4 4 |
+|             |                  |
+|   Batería   |     Intro        |
 
 M3
 7s
@@ -17,23 +17,23 @@ M3
 | Some-thing in the way she moves|         |    attracts me  like  no other | lover        | 
 
 M7
-22s
-| 1       U  2   U  3U   4    U  |1U  2U3U4U|   1        U        2      U      3U4U| 1     U     2       U        3U4U| 1U2U3U4U|
-| D       D  D   D   C   D  B A  |    G     | G  A      C C     D    A   C          | E   D   C  D  E    C  A          |         |
-|-5      -5 -5  -5   5  -5 -4 -3 |    3     | 3 -3      5 5    -5 5 -3   5          | 6  -5   5 -5  6    4 -3          |         |
-|                                |          |                                       |                                  |         |
-| Some-thing in the way she wooes|me        | I don't wanna     leave her now       |You know I believe and how        |         |
+20s
+| 1       U  2   U  3U   4    U  |1U  2U3U4U|   1        U        2      U      3U4U| 1     U     2       U        3U4U|
+| D       D  D   D   C   D  B A  |    G     | G  A      C C     D    A   C          | E   D   C  D  E    C  A          |
+|-5      -5 -5  -5   5  -5 -4 -3 |    3     | 3 -3      5 5    -5 5 -3   5          | 6  -5   5 -5  6    4 -3          |
+|                                |          |                                       |                                  |
+| Some-thing in the way she wooes|me        | I don't wanna     leave her now       |You know I believe and how        |
 
-M12
-40s
-|  1     U  2   U  3U   4    U   | 1U2U3U4U| 1     U2    U    3U   4    U   | 1U     2U3U4U|
-|  C     C  C   C   C   C    B---|----B    |       A#   A#    A#   C    D   |  C        A  |
-|  4     4  4   4   4   4   -4   |   -4    |      -3#  -3#   -3#   5   -5   |  4       -3  |
-|                                |         |                                |              |
-| Some where in her smile she knows              That I don't need no other | lover
+M11
+35s
+|  1 U  2  U3 U4 U |  1     U  2   U  3U   4    U   | 1U2U3U4U| 1     U2    U    3U   4    U   | 1U     2U3U4U|
+|  A C  A  A#  B C |  C     C  C   C   C   C    B---|----B    |       A#   A#    A#   C    D   |  C        A  |
+| -3 4 -3 -3# -4 4 |  4     4  4   4   4   4   -4   |   -4    |      -3#  -3#   -3#   5   -5   |  4       -3  |
+|                  |                                |         |                                |              |
+|                  | Some where in her smile she knows              That I don't need no other | lover
 
 M16
-55s
+53s
 | 1       U  2   U  3U   4    U  |1U  2U3U4U|   1        U        2      U      3U4U| 1     U     2       U        3U4U| 1U2U3U4U| 1U2U3U4U|
 | D       D  D   D   C   D  B A  |    G     | G  A      C C     D    A   C          | E   D   C  D  E    C  A          |         |         |
 |-5      -5 -5  -5   5  -5 -4 -3 |    3     | 3 -3      5 5    -5   -3   5          | 6  -5   5 -5  6    4 -3          |         |         |
@@ -42,12 +42,12 @@ M16
 
 
 M22
-76s
-| 1U  2      U    3    U    4   U   | 1U 2U 3U    4U    |  1U    2U3U       4U  | 1U 2U 3U 4U|
-|     C#     E    C#   E C# E  F#    |  C#        F#F#F#| E D     G F#          |  E         |
-|     5#     6    5#   6 5# 6 -6#    |  5#     -(6#6#6#)| 6-5     7-6#          |  6         |
+68s
+|  1 U  2  U3 U4 U | 1U  2      U    3    U    4   U   | 1U 2U 3U    4U    |  1U    2U3U       4U  | 1U 2U 3U 4U|
+|  A C  A  A#  B C |     C#     E    C#   E C# E  F#    |  C#        F#F#F#| E D     G F#          |  E         |
+| -3 4 -3 -3# -4 4 |     5#     6    5#   6 5# 6 -6#    |  5#     -(6#6#6#)| 6-5     7-6#          |  6         |
 |                                   |                   |                       |            |
-|     Your asking me where  my love | goes      I don't | know     I      don't | know       |
+|                  |     Your asking me where  my love | goes      I don't | know     I      don't | know       |
 
 
 M26
