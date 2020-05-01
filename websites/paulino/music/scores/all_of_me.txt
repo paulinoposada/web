@@ -36,7 +36,7 @@ Tabs for chromatic and diatonic harmonicas
 
 Rif
 
-E  F#  A  C C# E  F# C#  A
-6 -6# -7  9 9# 6 -6# 9# -7
+E  F#  A  C C# E  F# C#  A  A G G E E  D  D  C  A G  A
+6 -6# -7  9 9# 6 -6# 9# -7 -7 7 7 6 6 -5 -5  5 -3 3 -3
 
 
