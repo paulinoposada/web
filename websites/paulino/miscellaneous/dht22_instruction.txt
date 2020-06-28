@@ -1,0 +1,71 @@
+Connecting to a DHTxx Sensor
+
+https://learn.adafruit.com/dht/connecting-to-a-dhtxx-sensor
+
+https://unix.stackexchange.com/questions/12359/how-can-i-monitor-serial-port-traffic
+
+
+
+
+***************************************************************************
+Arduino: 1.8.12 (Linux), Board: "Arduino Uno"
+
+An error occurred while uploading the sketch
+avrdude: ser_open(): can't open device "/dev/ttyUSB0": Permission denied
+
+
+Solved error with
+
+$ ls -l /dev/ttyUSB0
+crw-rw---- 1 root dialout 188, 0 feb 14 22:41 /dev/ttyUSB0
+
+$ sudo usermod -a -G dialout p
+$ sudo chmod a+rw /dev/ttyUSB0
+***************************************************************************
+
+Show data on Serial Monitor (Arduino IDE - Tools > Serial Monitor)
+
+
+
+Serial transfer rate is defined in Sketch by
+
+Serial.begin(9600);    
+
+with Arduino/Genuino UNO - Serial.begin(115200);
+
+https://www.programmingelectronics.com/using-the-print-function-with-arduino-part-1/
+
+
+
+Show data on Terminal
+
+$ sudo screen -L /dev/ttyUSB0 9600
+
+-L Tell screen to turn on automatic output logging. Default logfile name is "screenlog.0"
+
+
+https://www.gnu.org/software/screen/manual/html_node/index.html#SEC_Contents
+
+
+
+Show tty devices
+
+https://www.cyberciti.biz/faq/find-out-linux-serial-ports-with-setserial/
+
+$ dmesg | grep tty
+
+[    0.076052] printk: console [tty0] enabled                                                Monitor
+[    0.877870] 00:02: ttyS0 at I/O 0x3f8 (irq = 4, base_baud = 115200) is a 16550A           Serial port
+[    3.411073] usb 1-6: ch341-uart converter now attached to ttyUSB0                         USB ports
+
+
+$ sudo apt install setserial
+
+/dev/ttyS0, UART: 16550A, Port: 0x03f8, IRQ: 4                                               Serial port
+/dev/ttyS1, UART: unknown, Port: 0x02f8, IRQ: 3
+/dev/ttyS2, UART: unknown, Port: 0x03e8, IRQ: 4
+/dev/ttyS3, UART: unknown, Port: 0x02e8, IRQ: 3
+
+
+
+
