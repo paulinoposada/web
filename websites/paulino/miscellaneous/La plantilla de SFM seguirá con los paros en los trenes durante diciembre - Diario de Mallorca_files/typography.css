@@ -1,0 +1,69 @@
+/* Google Fonts */
+/* @import url('https://fonts.googleapis.com/css?family=Barlow:400,500,600|Manuale:400,400i,600,700,700i|Playfair+Display|Roboto+Condensed:400,700|Roboto:400,700|Source+Code+Pro|Montserrat:400,700|Bree+Serif|Open+Sans:300,400,600,700&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Bree+Serif&family=Manuale:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;600;700&family=Playfair+Display&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&family=Source+Code+Pro&display=swap'); */
+
+/* TT Commons */
+@font-face {
+    font-display: swap; font-family: 'CommonsDemiBold'; font-style: normal; font-weight: 600;
+  src: url('/fonts/TTCommons-DemiBold2.eot');
+  src: url('/fonts/TTCommons-DemiBold2.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/TTCommons-DemiBold2.woff2') format('woff2'),
+  url('/fonts/TTCommons-DemiBold2.woff') format('woff');
+}
+@font-face {
+    font-display: swap; font-family: 'CommonsDemiBold2'; font-style: normal; font-weight: 600;
+  src: url('/fonts/TTCommons-DemiBold2.eot');
+  src: url('/fonts/TTCommons-DemiBold2.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/TTCommons-DemiBold2.woff2') format('woff2'),
+  url('/fonts/TTCommons-DemiBold2.woff') format('woff');
+}
+
+@font-face {
+    font-display: swap; font-family: 'CommonsMedium'; font-style: normal; font-weight: 500;
+  src: url('/fonts/TTCommons-Medium.eot');
+  src: url('/fonts/TTCommons-Medium.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/TTCommons-Medium.woff2') format('woff2'),
+  url('/fonts/TTCommons-Medium.woff') format('woff');
+}
+
+@font-face {
+    font-display: swap; font-family: 'CommonsBold'; font-style: normal; font-weight: bold;
+  src: url('/fonts/TTCommons-Bold.eot');
+  src: url('/fonts/TTCommons-Bold.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/TTCommons-Bold.woff2') format('woff2'),
+  url('/fonts/TTCommons-Bold.woff') format('woff');
+}
+
+@font-face {
+    font-display: swap; font-family: 'CommonsRegular'; font-style: normal; font-weight: normal;
+  src: url('/fonts/TTCommons-Regular.eot');
+  src: url('/fonts/TTCommons-Regular.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/TTCommons-Regular.woff2') format('woff2'),
+  url('/fonts/TTCommons-Regular.woff') format('woff');
+}
+
+@font-face {
+    font-display: swap; font-family: 'epi-icon-font'; font-style: normal; font-weight: normal;
+    src: url('/fonts/epi-icons.eot');
+    src: url('/fonts/epi-icons.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/epi-icons.woff2') format('woff2'),
+    url('/fonts/epi-icons.woff') format('woff'),
+    url('/fonts/epi-icons.svg#epi-icon-font') format('svg');
+}
+
+/*-----------------------
+//el @font-face de los logos de EPI se mueve a _epi-logos-font.scss
+//si se quiere usar, hay que ponerlo, además de aquí, en /resources/sass/amp/base/_tipography.scss
+//----------------------- */
+@font-face{
+    font-display: swap; font-family: "horoscope"; font-style:normal; font-weight:400;
+  src: url('/fonts/horoscope.eot');
+  src:
+    url('/fonts/horoscope.eot#iefix') format("embedded-opentype"),
+    url('/fonts/horoscope.ttf') format("truetype"),
+    url('/fonts/horoscope.woff') format("woff"),
+    url('/fonts/horoscope.svg#horoscope') format("svg");
+}
+
+
+

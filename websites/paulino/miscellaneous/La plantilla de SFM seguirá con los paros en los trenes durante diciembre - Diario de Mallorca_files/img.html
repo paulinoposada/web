@@ -1,0 +1,2922 @@
+<!doctype html>
+<html lang="es" class="diariodemallorca">
+<head>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="IE=EmulateIE9" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="Generator" content="bCube ">
+            <title></title>
+                <link rel="canonical" href="https://www.diariodemallorca.es/part-forana/2021/11/23/%7B%7Bimg%7D%7D" />
+    
+    <link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="https://estaticos-cdn.diariodemallorca.es/fonts/epi-icons.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="https://estaticos-cdn.diariodemallorca.es/fonts/TTCommons-DemiBold.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="https://estaticos-cdn.diariodemallorca.es/fonts/TTCommons-DemiBold2.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="https://estaticos-cdn.diariodemallorca.es/fonts/TTCommons-Medium.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="https://estaticos-cdn.diariodemallorca.es/fonts/TTCommons-Bold.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin="anonymous" href="https://estaticos-cdn.diariodemallorca.es/fonts/TTCommons-Regular.woff2" />
+
+
+            <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Bree+Serif&family=Manuale:ital,wght@0,400;0,600;1,400;1,700&family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;600;700&family=Playfair+Display&family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&family=Source+Code+Pro&display=swap" rel="stylesheet" rel="preload">
+                <link href="https://estaticos-cdn.diariodemallorca.es/css/base.css?id=b24f47b6fc9b44fe8c2d" rel="stylesheet" />
+        <link href="https://estaticos-cdn.diariodemallorca.es/cssFonts/typography.css?id=2a5dc54c72c073fe9ab9" rel="stylesheet" />
+        <link href="https://estaticos-cdn.diariodemallorca.es/css/app.css?id=c8bebf8fed22f60c8f0d" rel="stylesheet" />
+        <link href="https://estaticos-cdn.diariodemallorca.es/css/header.css?id=ef5f00a5734a0707c206" rel="stylesheet" />
+        <link href="https://estaticos-cdn.diariodemallorca.es/css/footer.css?id=42ade0d748e410767677" rel="stylesheet" rel="preload" />
+    
+    <link rel="preconnect" href="https://estaticos-cdn.diariodemallorca.es" />
+<link rel="preconnect" href="//www.googletagmanager.com" />
+<link rel="preconnect" href="//sb.scorecardresearch.com" />
+<link rel="preconnect" href="//www.google-analytics.com" />
+<link rel="preconnect" href="//analytics.prensaiberica.es" />
+<link rel="preconnect" href="//ping.chartbeat.net" />
+<link rel="preconnect" href="//connect.facebook.net" />
+
+    
+        
+
+        
+
+    
+            
+            <script lang="js">
+var app = window.app || {};
+app.utils = (function (module) {
+    if (typeof Array.isArray === 'undefined') {
+        Array.isArray = function(obj) {
+            return Object.prototype.toString.call(obj) === '[object Array]';
+        };
+    }
+    function FlagManager(flagNames) {
+        var self = this;
+        self.flags = {};
+        if (Array.isArray(flagNames)) {
+            for (var i = 0; i < flagNames.length; i++) {
+                self.flags[flagNames[i]] = 2 << i;
+            }
+        } else if (typeof flagNames === 'object') {
+            var i = 0;
+            for (var p in flagNames) {
+                if (flagNames.hasOwnProperty(p)) {
+                    self.flags[flagNames[p]] = 2 << i;
+                    i++;
+                }
+            }
+        }
+        self.value = 0;
+        self.subscribers = {};
+
+        function getFlag(flag) {
+            if (Array.isArray(flag)) {
+                return flag.reduce(function (result, f) {
+                    return result | getFlag(f);
+                }, 0);
+            }
+            return self.flags[flag] || flag || 0;
+        }
+
+        self.get = function (flag) {
+            flag = getFlag(flag);
+            return (self.value & flag) === flag;
+        };
+        self.set = function (flag) {
+            self.value |= (getFlag(flag));
+            setTimeout(function () {
+                Object.keys(self.subscribers)
+                    .map(function (mask) {
+                        if (self.get(parseInt(mask))) {
+                            self.subscribers[mask].forEach(function (cb) {
+                                cb();
+                            });
+                            delete self.subscribers[mask];
+                        }
+                    }.bind(self));
+            }.bind(self), 0);
+        };
+        self.subscribe = function (mask, callBack) {
+            mask = getFlag(mask);
+            if (parseInt(mask) && typeof callBack === 'function') {
+                if (self.get(mask)) return callBack();
+                self.subscribers[mask] = (self.subscribers[mask] || []);
+                self.subscribers[mask].push(callBack);
+            }
+        };
+    }
+    module.FlagManager = FlagManager;
+
+    function BufferQueue(flushCallback, initialBuffer) {
+        var self = this;
+        self.flush = flushCallback;
+        self.buffer = initialBuffer || [];
+        self.isReady = false;
+
+        self.doFlush = function () {
+            var elements = self.buffer.splice(0, self.buffer.length);
+            self.flush(elements);
+        };
+        self.ready = function () {
+            self.isReady = true;
+            self.doFlush();
+        };
+        self.push = function (element) {
+            self.buffer.push(element);
+            if (self.isReady) self.doFlush();
+        };
+    }
+    module.BufferQueue = BufferQueue;
+
+    module.getCookie = function (name) {
+        var value = '; ' + document.cookie;
+        var parts = value.split('; ' + name + '=');
+        if (parts.length === 2) {
+            return parts.pop()
+                .split(';')
+                .shift();
+        }
+    };
+    module.setCookie = function setCookie(name, value, options) {
+        let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+        options = options || {};
+        for (var optionKey in options) {
+            if (options.hasOwnProperty(optionKey)) {
+                updatedCookie += '; ' + optionKey;
+                let optionValue = options[optionKey];
+                if (optionValue !== true) {
+                    updatedCookie += '=' + optionValue;
+                }
+            }
+        }
+        document.cookie = updatedCookie;
+    };
+
+    module.URLSearchParams = window.URLSearchParams || function () {
+        return {
+            has: function () {
+                return false;
+            },
+        };
+    };
+
+    module.getViewportHeight = function () {
+        return Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    };
+
+    module.getViewportWidth = function () {
+        return Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    };
+
+    module.getScreenWidth = function (def) {
+        return screen ? screen.width : (def || 0);
+    };
+
+    return module;
+})(app.utils || {});
+</script>
+            
+<script type="text/javascript"
+        src="https://trafico.prensaiberica.es/cmp/min/prensaiberica-es.js" async></script>
+<script async type="text/javascript"
+        src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+
+            
+<script lang="js">
+var app = window.app || {};
+var tp = window.tp || [];
+
+
+app.user = (function (initialCallbacks) {
+    var FAILSAFE_TIMEOUT = 4000;
+    var module = {};
+    var time = Date.now();
+
+    // Callback subscriptions
+    var callbacks = new app.utils.BufferQueue(function (cbs) {
+        cbs.map(function (cb) {
+            cb(module.data);
+        });
+    }, Array.isArray(initialCallbacks) ? initialCallbacks : []);
+
+    var flags = {
+        INITIALIZED: 'INITIALIZED',
+        USER_INFO_LOADED: 'USER_INFO_LOADED',
+        USER_ACCESS_LOADED: 'USER_ACCESS_LOADED',
+    };
+    var flagManager = new app.utils.FlagManager(flags);
+
+    module.log = console.log.bind(console, '%c[USER]', 'color:darkorange');
+    module.data = {
+        piano: true,
+        status: 'anonimo',
+        id: null,
+        nick: '',
+        email: '',
+        fullName: '',
+        name: '',
+        surname: '',
+        initials: '',
+        avatar: '/assets/images/article/default_user.png',
+        logged: false,
+        subscriber: false,
+    };
+    module.log('🎹 Iniciando módulo de usuario con Piano...');
+    module.log('🎹 Calbacks iniciales:', initialCallbacks);
+
+    function initialized() {
+        app.utils.setCookie('dl_user_type', module.data.status);
+        module.timestamp = Date.now() - time;
+        module.log('🖖 ¡Usuario inicializado en ' + (module.timestamp / 1000).toFixed(2) + 's!', module.data);
+        flagManager.set(flags.INITIALIZED);
+    }
+
+    var tpInitTimeout = setTimeout(function () {
+        module.log('⌚ Piano no se ha inicializado a tiempo.');
+        initialized();
+    }, FAILSAFE_TIMEOUT);
+
+    tp.push(['init', function () {
+        clearTimeout(tpInitTimeout);
+
+        if (!tp.pianoId.isUserValid()) {
+            module.log('🙅 El usuario no está logado.');
+            initialized();
+            return;
+        }
+
+        module.log('🙋 El usuario está logado.');
+        var tpUser = tp.pianoId.getUser();
+        module.data.status = 'logado';
+        module.data.logged = true;
+        module.data.id = tpUser.uid || null;
+        module.data.email = tpUser.email || '';
+        module.data.name = tpUser.firstName || '';
+        module.data.surname = tpUser.lastName || '';
+        module.data.fullName = [module.data.name, module.data.surname].join(' ').trim();
+        module.data.initials = ((tpUser.firstName || ' ')[0] + (tpUser.lastName || ' ')[0]).trim()
+            .toUpperCase();
+
+        var loadExtendedUserTimeout = setTimeout(function () {
+            module.log('⌚ Piano ha tardado demasiado en devolver la información del usuario.');
+            flagManager.set(flags.USER_INFO_LOADED);
+        }, FAILSAFE_TIMEOUT);
+        tp.pianoId.loadExtendedUser({
+            formName: 'bbnx-piano',
+            extendedUserLoaded: function (data) {
+                clearTimeout(loadExtendedUserTimeout);
+                (data.custom_field_values || []).forEach(function (customField) {
+                    if (customField.field_name === 'picture'
+                        && customField.value
+                    ) {
+                        module.data.avatar = customField.value;
+                    } else if (customField.field_name === 'username') {
+                        module.data.nick = customField.value;
+                    }
+                });
+                module.log('🤸 Hemos obtenido la información del usuario');
+                flagManager.set(flags.USER_INFO_LOADED);
+            },
+        });
+
+        var accessListTimeout = setTimeout(function () {
+            module.log('⌚ Piano ha tardado demasiado en devolver las suscripciones del usuario.');
+            flagManager.set(flags.USER_ACCESS_LOADED);
+        }, FAILSAFE_TIMEOUT);
+        tp.api.callApi('/access/list', {}, function (response) {
+            clearTimeout(accessListTimeout);
+            var accesses = response.data || [];
+            for (var i in accesses) {
+                if (accesses.hasOwnProperty(i)
+                    && accesses[i].granted
+                ) {
+                    module.data.subscriber = true;
+                    module.data.status = 'suscriptor';
+                    break;
+                }
+            }
+            if (module.data.subscriber) {
+                module.log('🏄 El usuario es suscriptor.');
+            } else {
+                module.log('🧘 El usuario no es suscriptor.');
+            }
+            flagManager.set(flags.USER_ACCESS_LOADED);
+        });
+    }]);
+
+    flagManager.subscribe(flags.INITIALIZED, callbacks.ready);
+    flagManager.subscribe([flags.USER_ACCESS_LOADED, flags.USER_INFO_LOADED], initialized);
+
+    module.callbacks = callbacks;
+    module.flagManager = flagManager;
+    module.push = callbacks.push;
+
+    return module;
+})(app.user || []);
+</script>
+        
+        </head>
+<body class="">
+
+
+
+
+
+    
+    
+
+
+
+
+<header id="schema-organization" itemprop="publisher" itemscope itemtype="http://schema.org/Organization" class="header header--home">
+
+    <meta content="https://estaticos-cdn.diariodemallorca.es/images/logo-diariodemallorca.png?id=7e2452cf08a8d10457ec" itemprop="image">
+
+        
+
+    <article class="header--top">
+
+        <button class="main-menu__trigger" title="Secciones">
+            <i class="i-menu-trigger"></i>
+        </button>
+
+        
+
+<article class="mega-menu-responsive" style="font-size:0;">
+    <header itemscope itemtype="http://schema.org/Organization">
+
+        <meta content="Diario de Mallorca" itemprop="name">
+        <meta content="https://www.diariodemallorca.es" itemprop="url">
+        <meta content="https://estaticos-cdn.diariodemallorca.es/images/logo-diariodemallorca.png?id=7e2452cf08a8d10457ec" itemprop="logo">
+
+        <div class="mega-menu-responsive__close">
+            <i class="i-close_gallery"></i>
+        </div>
+        <div class="mega-menu-responsive__options">
+            <button class="btn-header-search" type="button" data-menu-open="search">
+                <i class="i-search"></i>
+            </button>
+        </div>
+    </header>
+
+    
+
+    <nav class="mega-menu-accordion" itemscope
+        itemtype="http://schema.org/SiteNavigationElement">
+
+        
+
+               <h3 class="mega-menu-accordion__item">
+             <a href="https://www.diariodemallorca.es/local/"
+                class="mega-menu-accordion__item-link">
+                 Local
+             </a>
+                                               <i class="i-arrow-down"></i>
+                      </h3>
+
+         <div class="mega-menu-accordion__content">
+                              <ul>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/mallorca/"            class="header--home"        title="Mallorca"
+>
+                        Mallorca
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/palma/"            class="header--home"        title="Diario de Palma"
+>
+                        Diario de Palma
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/part-forana/"            class="header--home"        title="Part Forana"
+>
+                        Part Forana
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/municipios.html"            class="header--home"        title="Municipios"
+>
+                        Municipios
+            </a>
+                         </li>
+                                      </ul>
+                      </div>
+              <h3 class="mega-menu-accordion__item">
+             <a href="https://www.diariodemallorca.es/mas-noticias/"
+                class="mega-menu-accordion__item-link">
+                 Más noticias
+             </a>
+                                               <i class="i-arrow-down"></i>
+                      </h3>
+
+         <div class="mega-menu-accordion__content">
+                              <ul>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/nacional/"            class="header--home"        title="Nacional"
+>
+                        Nacional
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/internacional/"            class="header--home"        title="Internacional"
+>
+                        Internacional
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/sociedad/"            class="header--home"        title="Sociedad"
+>
+                        Sociedad
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/tags/ciencia/"            class="header--home"        title="Ciencia"
+>
+                        Ciencia
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/verde-y-azul/"    target="_blank"    rel="nofollow"    class="header--home"        title="Verde y azul"
+>
+                        Verde y azul
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/tendencias21/"    target="_blank"    rel="nofollow"    class="header--home"        title="Tendencias 21"
+>
+                        Tendencias 21
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/educar-es-todo/"            class="header--home"        title="Educar es todo"
+>
+                        Educar es todo
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/especiales/"            class="header--home"        title="Especiales DM"
+>
+                        Especiales DM
+            </a>
+                         </li>
+                                      </ul>
+                      </div>
+              <h3 class="mega-menu-accordion__item">
+             <a href="https://www.diariodemallorca.es/deportes/"
+                class="mega-menu-accordion__item-link">
+                 Deportes
+             </a>
+                                               <i class="i-arrow-down"></i>
+                      </h3>
+
+         <div class="mega-menu-accordion__content">
+                              <ul>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/tags/futbol/"            class="header--home"        title="Fútbol"
+>
+                        Fútbol
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/rcd-mallorca/"            class="header--home"        title="RCD Mallorca"
+>
+                        RCD Mallorca
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/atletico-balear/"            class="header--home"        title="Atlético Baleares"
+>
+                        Atlético Baleares
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/tags/rafa-nadal/"            class="header--home"        title="Rafa Nadal"
+>
+                        Rafa Nadal
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/tags/baloncesto/"            class="header--home"        title="Baloncesto"
+>
+                        Baloncesto
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/tags/formula-1/"            class="header--home"        title="Formula 1"
+>
+                        Formula 1
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/motogp/"            class="header--home"        title="MotoGP"
+>
+                        MotoGP
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/deportes/futbol/"            class="header--home"        title="Resultados"
+>
+                        Resultados
+            </a>
+                         </li>
+                                      </ul>
+                      </div>
+              <h3 class="mega-menu-accordion__item">
+             <a href="https://www.diariodemallorca.es/economia/"
+                class="mega-menu-accordion__item-link">
+                 Economía
+             </a>
+                                               <i class="i-arrow-down"></i>
+                      </h3>
+
+         <div class="mega-menu-accordion__content">
+                              <ul>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/finanzas-personales/"            class="header--home"        title="Finanzas personales"
+>
+                        Finanzas personales
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/economia/diario-de-negocios/"            class="header--home"        title="Diario de Negocios"
+>
+                        Diario de Negocios
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/empleo-en-mallorca/"            class="header--home"        title="Empleo"
+>
+                        Empleo
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/vivienda-en-mallorca/"            class="header--home"        title="Vivienda"
+>
+                        Vivienda
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/economia/activos/"            class="header--home"        title="Activos"
+>
+                        Activos
+            </a>
+                         </li>
+                                      </ul>
+                      </div>
+              <h3 class="mega-menu-accordion__item">
+             <a href="https://www.diariodemallorca.es/opinion/"
+                class="mega-menu-accordion__item-link">
+                 Opinión
+             </a>
+                                               <i class="i-arrow-down"></i>
+                      </h3>
+
+         <div class="mega-menu-accordion__content">
+                              <ul>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/autores/matias-valles.html"            class="header--home"        title="Matías Vallés"
+>
+                        Matías Vallés
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/autores/pilar-garces.html"            class="header--home"        title="Pilar Garcés"
+>
+                        Pilar Garcés
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/autores/daniel-capo.html"            class="header--home"        title="Daniel Capó"
+>
+                        Daniel Capó
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/autores/jose-carlos-llop.html"            class="header--home"        title="José Carlos Llop"
+>
+                        José Carlos Llop
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/autores/jorge-dezcallar.html"            class="header--home"        title="Jorge Dezcallar"
+>
+                        Jorge Dezcallar
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/llama-la-atencion/"            class="header--home"        title="Llama la atención"
+>
+                        Llama la atención
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/opinion/cartas-de-los-lectores/"            class="header--home"        title="Cartas de los lectores"
+>
+                        Cartas de los lectores
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/humor/"            class="header--home"        title="Humor"
+>
+                        Humor
+            </a>
+                         </li>
+                                      </ul>
+                      </div>
+              <h3 class="mega-menu-accordion__item">
+             <a href="https://www.diariodemallorca.es/sucesos/"
+                class="mega-menu-accordion__item-link">
+                 Caso Abierto
+             </a>
+                                               <i class="i-arrow-down"></i>
+                      </h3>
+
+         <div class="mega-menu-accordion__content">
+                              <ul>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/sucesos/tribunales/"            class="header--home"        title="Tribunales"
+>
+                        Tribunales
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/sucesos/investigacion/"            class="header--home"        title="Investigación"
+>
+                        Investigación
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/sucesos/sucesos-mallorca/"            class="header--home"        title="Sucesos en Mallorca"
+>
+                        Sucesos en Mallorca
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/sucesos/desaparecidos/"            class="header--home"        title="Desaparecidos"
+>
+                        Desaparecidos
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/violencia-de-genero/"            class="header--home"        title="Violencia machista"
+>
+                        Violencia machista
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/sucesos/delitos-informaticos/"            class="header--home"        title="Delitos informáticos"
+>
+                        Delitos informáticos
+            </a>
+                         </li>
+                                      </ul>
+                      </div>
+              <h3 class="mega-menu-accordion__item">
+             <a href="https://www.diariodemallorca.es/cultura/"
+                class="mega-menu-accordion__item-link">
+                 Cultura
+             </a>
+                                               <i class="i-arrow-down"></i>
+                      </h3>
+
+         <div class="mega-menu-accordion__content">
+                              <ul>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/tags/libros/"            class="header--home"        title="Libros"
+>
+                        Libros
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/ocio/cine/"            class="header--home"        title="Cine"
+>
+                        Cine
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/ocio/agenda/"            class="header--home"        title="Agenda"
+>
+                        Agenda
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/tags/musica/"            class="header--home"        title="Música"
+>
+                        Música
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/tags/teatro/"            class="header--home"        title="Teatro"
+>
+                        Teatro
+            </a>
+                         </li>
+                                      </ul>
+                      </div>
+              <h3 class="mega-menu-accordion__item">
+             <a href="https://www.diariodemallorca.es/ocio/"
+                class="mega-menu-accordion__item-link">
+                 Ocio
+             </a>
+                                               <i class="i-arrow-down"></i>
+                      </h3>
+
+         <div class="mega-menu-accordion__content">
+                              <ul>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/ocio/cine/"            class="header--home"        title="Cine"
+>
+                        Cine
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/ocio/tv/"            class="header--home"        title="Televisión"
+>
+                        Televisión
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/ocio/planes/"            class="header--home"        title="Planes"
+>
+                        Planes
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/ocio/agenda/"            class="header--home"        title="Agenda"
+>
+                        Agenda
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/ocio/gastronomia/"            class="header--home"        title="Gastronomía"
+>
+                        Gastronomía
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.restaurantesdemallorca.com/"            class="header--home"        title="Restaurantes en Mallorca"
+>
+                        Restaurantes en Mallorca
+            </a>
+                         </li>
+                                      </ul>
+                      </div>
+              <h3 class="mega-menu-accordion__item">
+             <a href="https://www.diariodemallorca.es/vida-y-estilo/"
+                class="mega-menu-accordion__item-link">
+                 Vida y Estilo
+             </a>
+                                               <i class="i-arrow-down"></i>
+                      </h3>
+
+         <div class="mega-menu-accordion__content">
+                              <ul>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/vida-y-estilo/salud/"            class="header--home"        title="Salud"
+>
+                        Salud
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/vida-y-estilo/tecnologia/"            class="header--home"        title="Tecnología"
+>
+                        Tecnología
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/vida-y-estilo/moda-belleza/"            class="header--home"        title="Moda"
+>
+                        Moda
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/vida-y-estilo/gente/"            class="header--home"        title="Gente"
+>
+                        Gente
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/vida-y-estilo/decoracion/"            class="header--home"        title="Decoración"
+>
+                        Decoración
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/motor/"            class="header--home"        title="Neomotor"
+>
+                        Neomotor
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.compramejor.es/"            class="header--home"        title="Compramejor"
+>
+                        Compramejor
+            </a>
+                         </li>
+                                              <li itemprop="name">
+                             
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/buscando-respuestas/"            class="header--home"        title="Buscando respuestas"
+>
+                        Buscando respuestas
+            </a>
+                         </li>
+                                      </ul>
+                      </div>
+      
+        
+        <h3 class=""></h3>
+        <div class="mega-menu-sidebar" itemscope="itemscope"
+             itemtype="http://schema.org/SiteNavigationElement">
+             <nav class="mega-menu-sidebar__list" data-navigation-id="758">
+                 <ul>
+                                              <li itemprop="name">
+                                                              <span class="menu-default"><span>Multimedia</span></span>
+                                                                                           <ul class="mega-menu-sidebar__sublist">
+                                                                              <li itemprop="name">
+                                                                                              <a class="menu-default" href="https://www.diariodemallorca.es/videos/"   itemprop="url"><span>Vídeos</span></a>
+                                                                                      </li>
+                                                                              <li itemprop="name">
+                                                                                              <a class="menu-default" href="https://www.diariodemallorca.es/fotos/"   itemprop="url"><span>Fotogalerías</span></a>
+                                                                                      </li>
+                                                                      </ul>
+                                                      </li>
+                                              <li itemprop="name">
+                                                              <span class="menu-default"><span>Servicios</span></span>
+                                                                                           <ul class="mega-menu-sidebar__sublist">
+                                                                              <li itemprop="name">
+                                                                                              <a class="menu-default" href="https://juegos.diariodemallorca.es/"   itemprop="url"><span>Pasatiempos</span></a>
+                                                                                      </li>
+                                                                              <li itemprop="name">
+                                                                                              <a class="menu-default" href="https://tiempo.diariodemallorca.es/"   itemprop="url"><span>Tiempo</span></a>
+                                                                                      </li>
+                                                                              <li itemprop="name">
+                                                                                              <a class="menu-default" href="/blogs/"   itemprop="url"><span>Blogs</span></a>
+                                                                                      </li>
+                                                                              <li itemprop="name">
+                                                                                              <a class="menu-default" href="https://www.diariodemallorca.es/esquelas/"   itemprop="url"><span>Esquelas</span></a>
+                                                                                      </li>
+                                                                              <li itemprop="name">
+                                                                                              <a class="menu-default" href="/newsletters/"   itemprop="url"><span>Newsletter</span></a>
+                                                                                      </li>
+                                                                              <li itemprop="name">
+                                                                                              <a class="menu-default" href="/hemeroteca/"   itemprop="url"><span>Hemeroteca</span></a>
+                                                                                      </li>
+                                                                              <li itemprop="name">
+                                                                                              <a class="menu-default" href="/lo-ultimo/"   itemprop="url"><span>Lo último</span></a>
+                                                                                      </li>
+                                                                              <li itemprop="name">
+                                                                                              <a class="menu-default" href="/rss.html"   itemprop="url"><span>RSS</span></a>
+                                                                                      </li>
+                                                                              <li itemprop="name">
+                                                                                              <a class="menu-default" href="/sorteos/"   itemprop="url"><span>Sorteos</span></a>
+                                                                                      </li>
+                                                                              <li itemprop="name">
+                                                                                              <a class="menu-default" href="/mapaweb/"   itemprop="url"><span>Mapa Web</span></a>
+                                                                                      </li>
+                                                                              <li itemprop="name">
+                                                                                              <a class="menu-default" href="/tags/"   itemprop="url"><span>Tags</span></a>
+                                                                                      </li>
+                                                                              <li itemprop="name">
+                                                                                              <a class="menu-default" href="https://www.diariodemallorca.es/local/camaras-en-directo-de-mallorca/"   itemprop="url"><span>Camaras en directo</span></a>
+                                                                                      </li>
+                                                                      </ul>
+                                                      </li>
+                                              <li itemprop="name">
+                                                              <span class="menu-default"><span>Clasificados</span></span>
+                                                                                           <ul class="mega-menu-sidebar__sublist">
+                                                                              <li itemprop="name">
+                                                                                              <a class="menu-default" href="https://www.iberempleos.es/ofertas-empleo/mallorca"   itemprop="url"><span>Empleo Mallorca</span></a>
+                                                                                      </li>
+                                                                              <li itemprop="name">
+                                                                                              <a class="menu-default" href="https://www.tucasa.com/compra-venta/viviendas/mallorca/?r=&amp;idz=0007.0001"   itemprop="url"><span>Vivienda Mallorca</span></a>
+                                                                                      </li>
+                                                                              <li itemprop="name">
+                                                                                              <a class="menu-default" href="https://www.tucasa.com/alquiler/viviendas/mallorca/?r=&amp;idz=0007.0001"   itemprop="url"><span>Alquiler Mallorca</span></a>
+                                                                                      </li>
+                                                                              <li itemprop="name">
+                                                                                              <a class="menu-default" href="https://ocasion.neomotor.com/coches-segunda-mano-mallorca"   itemprop="url"><span>Coches de ocasión</span></a>
+                                                                                      </li>
+                                                                      </ul>
+                                                      </li>
+                                      </ul>
+             </nav>
+                                                <h3 class="rrss rrss--mega-menu-sidebar mega-menu-accordion__item">
+            <span>Síguenos en redes sociales:</span>
+        </h3>
+        <div class="rrss rrss--mega-menu-sidebar mega-menu-accordion__content">
+            <ul class="rrss__list">
+                                    <li class="rrss__item">
+                        <a href="https://www.facebook.com/diariodemallorca.es/"
+                           title="Síguenos en Facebook">
+                            <i class="i-facebook"></i>
+                        </a>
+                    </li>
+                                                    <li class="rrss__item rrss__item--twitter">
+                        <a href="https://twitter.com/diariomallorca"
+                           title="Síguenos en Twitter">
+                            <i class="i-twitter"></i>
+                        </a>
+                    </li>
+                                                    <li class="rrss__item">
+                        <a href="https://www.instagram.com/diariodemallorca"
+                           title="Síguenos en Instagram">
+                            <i class="i-instagram"></i>
+                        </a>
+                    </li>
+                                                    <li class="rrss__item">
+                        <a href="https://www.linkedin.com//company/diario-de-mallorca/"
+                           title="Síguenos en LinkedIn">
+                            <i class="i-linkedin"></i>
+                        </a>
+                    </li>
+                            </ul>
+        </div>
+                </div>
+
+                <div class="mega-menu-accordion__content" data-hide-for-not-logged-users></div>
+
+    </nav>
+
+</article>
+
+            
+    <nav class="section-menu" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                    <span itemprop="name">
+                                    
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/local/"            class="menu-default"        title="Local"
+>
+                        <span
+                            >
+                Local
+            </span>
+            </a>
+                            </span>
+                    <span itemprop="name">
+                                    
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/mas-noticias/"            class="menu-default"        title="Más noticias"
+>
+                        <span
+                            >
+                Más noticias
+            </span>
+            </a>
+                            </span>
+                    <span itemprop="name">
+                                    
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/deportes/"            class="menu-default"        title="Deportes"
+>
+                        <span
+                            >
+                Deportes
+            </span>
+            </a>
+                            </span>
+                    <span itemprop="name">
+                                    
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/economia/"            class="menu-default"        title="Economía"
+>
+                        <span
+                            >
+                Economía
+            </span>
+            </a>
+                            </span>
+                    <span itemprop="name">
+                                    
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/opinion/"            class="menu-default"        title="Opinión"
+>
+                        <span
+                            >
+                Opinión
+            </span>
+            </a>
+                            </span>
+                    <span itemprop="name">
+                                    
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/sucesos/"            class="menu-default"        title="Caso Abierto"
+>
+                        <span
+                            >
+                Caso Abierto
+            </span>
+            </a>
+                            </span>
+                    <span itemprop="name">
+                                    
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/cultura/"            class="menu-default"        title="Cultura"
+>
+                        <span
+                            >
+                Cultura
+            </span>
+            </a>
+                            </span>
+                    <span itemprop="name">
+                                    
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/ocio/"            class="menu-default"        title="Ocio"
+>
+                        <span
+                            >
+                Ocio
+            </span>
+            </a>
+                            </span>
+                    <span itemprop="name">
+                                    
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/vida-y-estilo/"            class="menu-default"        title="Vida y Estilo"
+>
+                        <span
+                            >
+                Vida y Estilo
+            </span>
+            </a>
+                            </span>
+                    </nav>
+
+    
+                <div class="menu-front" id="front-section-1"
+             style="font-size:0;display:none">
+            <div class="wrapper fullwidth">
+                <div class="row">
+                    <ul class="col-2 section-item-list">
+                                                                                    <li><a
+        href="https://www.diariodemallorca.es/mallorca/"
+                >Mallorca</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/palma/"
+                >Diario de Palma</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/part-forana/"
+                >Part Forana</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/municipios.html"
+                >Municipios</a>
+</li>
+                                                                        </ul>
+                                            <div class="col-10 news-gallery">
+                            <div class="row">
+
+                                                                                                                                                        <div class="col-4">
+                                                
+
+<article class="new">
+<a href="/mallorca/2021/11/24/solicitar-pasaporte-covid-digital-baleares-54839208.html" class="new__media" ><img class="image lozad" data-src="https://estaticos-cdn.prensaiberica.es/clip/d26cb165-8753-4a3c-ae5b-4f225d93b035_16-9-aspect-ratio_25p_0.jpg" data-alt="¿Cómo conseguir el pasaporte covid en Baleares?" style="width:100%;max-width:100%" height="146" width="259" loading="lazy"/></a>
+<header>
+<a href="/mallorca/" class="new__topic"><span>Mallorca</span></a>
+<a href="/mallorca/2021/11/24/solicitar-pasaporte-covid-digital-baleares-54839208.html" class="new__headline" ><h2>¿Cómo conseguir el pasaporte covid en Baleares?</h2></a>
+</header>
+</article>
+                                            </div>
+                                                                                                                                                                <div class="col-4">
+                                                
+
+<article class="new">
+<a href="/mallorca/2021/11/24/son-comunidades-quieren-implantar-pasaporte-59620692.html" class="new__media" ><img class="image lozad" data-src="https://estaticos-cdn.prensaiberica.es/clip/30383f51-d849-4786-8e2d-dc9bf84d8bfe_16-9-aspect-ratio_25p_0.jpg" data-alt="Pasaporte covid: ¿Qué comunidades quieren implantar el certificado covid?" style="width:100%;max-width:100%" height="146" width="259" loading="lazy"/></a>
+<header>
+<a href="/mallorca/" class="new__topic"><span>Mallorca</span></a>
+<a href="/mallorca/2021/11/24/son-comunidades-quieren-implantar-pasaporte-59620692.html" class="new__headline" ><h2>Pasaporte covid: ¿Qué comunidades quieren implantar el certificado covid?</h2></a>
+</header>
+</article>
+                                            </div>
+                                                                                                                                                                <div class="col-4">
+                                                
+
+<article class="new">
+<a href="/palma/2021/11/24/consulta-actos-encendido-luces-navidad-59681321.html" class="new__media" ><img class="image lozad" data-src="https://estaticos-cdn.prensaiberica.es/clip/a1263815-4bc8-421c-b43c-b2322420bb8d_16-9-aspect-ratio_25p_1099909.jpg" data-alt="Consulta todos los actos del encendido de luces de Navidad hoy en Palma" style="width:100%;max-width:100%" height="146" width="259" loading="lazy"/></a>
+<header>
+<a href="/palma/" class="new__topic"><span>Diario de Palma</span></a>
+<a href="/palma/2021/11/24/consulta-actos-encendido-luces-navidad-59681321.html" class="new__headline" ><h2>Consulta todos los actos del encendido de luces de Navidad hoy en Palma</h2></a>
+</header>
+</article>
+                                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                
+                                
+                            </div>
+                        </div>
+                                    </div>
+            </div>
+        </div>
+        
+    
+                <div class="menu-front" id="front-section-2"
+             style="font-size:0;display:none">
+            <div class="wrapper fullwidth">
+                <div class="row">
+                    <ul class="col-2 section-item-list">
+                                                                                    <li><a
+        href="https://www.diariodemallorca.es/nacional/"
+                >Nacional</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/internacional/"
+                >Internacional</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/sociedad/"
+                >Sociedad</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/tags/ciencia/"
+                >Ciencia</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/verde-y-azul/"
+         target="_blank"         rel="nofollow">Verde y azul</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/tendencias21/"
+         target="_blank"         rel="nofollow">Tendencias 21</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/educar-es-todo/"
+                >Educar es todo</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/especiales/"
+                >Especiales DM</a>
+</li>
+                                                                        </ul>
+                                            <div class="col-10 news-gallery">
+                            <div class="row">
+
+                                                                                                                                                        <div class="col-4">
+                                                
+
+<article class="new">
+<a href="/nacional/2021/11/24/consejo-fiscal-reune-conocerse-maniobras-59890296.html" class="new__media" ><img class="image lozad" data-src="https://estaticos-cdn.prensaiberica.es/clip/28bd7011-5959-407d-9edf-2247ad310258_16-9-aspect-ratio_25p_0.jpg" data-alt="El Consejo Fiscal se reúne tras conocerse la maniobras de Delgado en el caso Tándem-Villarejo" style="width:100%;max-width:100%" height="146" width="259" loading="lazy"/></a>
+<header>
+<a href="/nacional/" class="new__topic"><span>Nacional</span></a>
+<a href="/nacional/2021/11/24/consejo-fiscal-reune-conocerse-maniobras-59890296.html" class="new__headline" ><h2>El Consejo Fiscal se reúne tras conocerse la maniobras de Delgado en el caso Tándem-Villarejo</h2></a>
+</header>
+</article>
+                                            </div>
+                                                                                                                                                                <div class="col-4">
+                                                
+
+<article class="new">
+<a href="/nacional/2021/11/24/preocupacion-interior-espiral-politizacion-policias-59890143.html" class="new__media" ><img class="image lozad" data-src="https://estaticos-cdn.prensaiberica.es/clip/3ce26f53-a751-4b3f-9a34-e40a75d0d4d6_16-9-aspect-ratio_25p_0.jpg" data-alt="Preocupación en Interior por la “espiral de politización” de los policías" style="width:100%;max-width:100%" height="146" width="259" loading="lazy"/></a>
+<header>
+<a href="/nacional/" class="new__topic"><span>Nacional</span></a>
+<a href="/nacional/2021/11/24/preocupacion-interior-espiral-politizacion-policias-59890143.html" class="new__headline" ><h2>Preocupación en Interior por la “espiral de politización” de los policías</h2></a>
+</header>
+</article>
+                                            </div>
+                                                                                                                                                                <div class="col-4">
+                                                
+
+<article class="new">
+<a href="/nacional/2021/11/24/unidas-movilizan-frenar-actuacion-interior-59889831.html" class="new__media" ><img class="image lozad" data-src="https://estaticos-cdn.prensaiberica.es/clip/8598b12f-642a-46a4-9412-2193e0057995_16-9-aspect-ratio_25p_0.jpg" data-alt="Unidas Podemos se movilizan para frenar la actuación de Interior por la crisis de Cádiz" style="width:100%;max-width:100%" height="146" width="259" loading="lazy"/></a>
+<header>
+<a href="/nacional/" class="new__topic"><span>Nacional</span></a>
+<a href="/nacional/2021/11/24/unidas-movilizan-frenar-actuacion-interior-59889831.html" class="new__headline" ><h2>Unidas Podemos se movilizan para frenar la actuación de Interior por la crisis de Cádiz</h2></a>
+</header>
+</article>
+                                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                
+                                
+                            </div>
+                        </div>
+                                    </div>
+            </div>
+        </div>
+        
+    
+                <div class="menu-front" id="front-section-3"
+             style="font-size:0;display:none">
+            <div class="wrapper fullwidth">
+                <div class="row">
+                    <ul class="col-2 section-item-list">
+                                                                                    <li><a
+        href="https://www.diariodemallorca.es/tags/futbol/"
+                >Fútbol</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/rcd-mallorca/"
+                >RCD Mallorca</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/atletico-balear/"
+                >Atlético Baleares</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/tags/rafa-nadal/"
+                >Rafa Nadal</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/tags/baloncesto/"
+                >Baloncesto</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/tags/formula-1/"
+                >Formula 1</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/motogp/"
+                >MotoGP</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/deportes/futbol/"
+                >Resultados</a>
+</li>
+                                                                        </ul>
+                                            <div class="col-10 news-gallery">
+                            <div class="row">
+
+                                                                                                                                                        <div class="col-4">
+                                                
+
+<article class="new">
+<a href="https://www.epe.es/especiales/viaje-pedrosa-galan/" class="new__media" ><img class="image lozad" data-src="https://estaticos-cdn.prensaiberica.es/clip/8081d5a2-f2a2-4e91-b79f-ff3278c2cfb7_16-9-aspect-ratio_25p_0.jpg" data-alt="El increíble viaje de Galán: de León a futbolista profesional en 13 países" style="width:100%;max-width:100%" height="146" width="259" loading="lazy"/></a>
+<header>
+<a href="/deportes/" class="new__topic"><span>Deportes</span></a>
+<a href="https://www.epe.es/especiales/viaje-pedrosa-galan/" class="new__headline" ><h2>El increíble viaje de Galán: de León a futbolista profesional en 13 países</h2></a>
+</header>
+</article>
+                                            </div>
+                                                                                                                                                                <div class="col-4">
+                                                
+
+<article class="new">
+<a href="/deportes/2021/11/24/garden-hotels-vincula-xxxi-challenge-59886630.html" class="new__media" ><img class="image lozad" data-src="https://estaticos-cdn.prensaiberica.es/clip/2d9ac640-f662-4a6e-84c3-1bf147d6f888_16-9-aspect-ratio_25p_0.jpg" data-alt="Garden Hotels se vincula a  la XXXI Challenge Mallorca" style="width:100%;max-width:100%" height="146" width="259" loading="lazy"/></a>
+<header>
+<a href="/deportes/" class="new__topic"><span>Deportes</span></a>
+<a href="/deportes/2021/11/24/garden-hotels-vincula-xxxi-challenge-59886630.html" class="new__headline" ><h2>Garden Hotels se vincula a  la XXXI Challenge Mallorca</h2></a>
+</header>
+</article>
+                                            </div>
+                                                                                                                                                                <div class="col-4">
+                                                
+
+<article class="new">
+<a href="/deportes/2021/11/24/circuito-junior-2021-cierra-gran-59886627.html" class="new__media" ><img class="image lozad" data-src="https://estaticos-cdn.prensaiberica.es/clip/9aa88ff0-8c32-4c28-9f8e-1d254bed975a_16-9-aspect-ratio_25p_0.jpg" data-alt="El Circuito Junior 2021 cierra con una gran fiesta en Alcanada" style="width:100%;max-width:100%" height="146" width="259" loading="lazy"/></a>
+<header>
+<a href="/deportes/" class="new__topic"><span>Deportes</span></a>
+<a href="/deportes/2021/11/24/circuito-junior-2021-cierra-gran-59886627.html" class="new__headline" ><h2>El Circuito Junior 2021 cierra con una gran fiesta en Alcanada</h2></a>
+</header>
+</article>
+                                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                
+                                
+                            </div>
+                        </div>
+                                    </div>
+            </div>
+        </div>
+        
+    
+                <div class="menu-front" id="front-section-4"
+             style="font-size:0;display:none">
+            <div class="wrapper fullwidth">
+                <div class="row">
+                    <ul class="col-2 section-item-list">
+                                                                                    <li><a
+        href="https://www.diariodemallorca.es/finanzas-personales/"
+                >Finanzas personales</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/economia/diario-de-negocios/"
+                >Diario de Negocios</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/empleo-en-mallorca/"
+                >Empleo</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/vivienda-en-mallorca/"
+                >Vivienda</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/economia/activos/"
+                >Activos</a>
+</li>
+                                                                        </ul>
+                                            <div class="col-10 news-gallery">
+                            <div class="row">
+
+                                                                                                                                                        <div class="col-4">
+                                                
+
+<article class="new">
+<a href="/economia/2021/11/24/espana-produce-gas-40-electricidad-59889625.html" class="new__media" ><img class="image lozad" data-src="https://estaticos-cdn.prensaiberica.es/clip/5916486b-5140-4b19-92d5-c781fa3826cf_16-9-aspect-ratio_25p_0.jpg" data-alt="España produce con gas el 40% de su electricidad por el parón de nucleares" style="width:100%;max-width:100%" height="146" width="259" loading="lazy"/></a>
+<header>
+<a href="/economia/" class="new__topic"><span>Economía</span></a>
+<a href="/economia/2021/11/24/espana-produce-gas-40-electricidad-59889625.html" class="new__headline" ><h2>España produce con gas el 40% de su electricidad por el parón de nucleares</h2></a>
+</header>
+</article>
+                                            </div>
+                                                                                                                                                                <div class="col-4">
+                                                
+
+<article class="new">
+<a href="/economia/2021/11/24/espana-vaciada-presiona-luchar-emergencia-59889561.html" class="new__media" ><img class="image lozad" data-src="https://estaticos-cdn.prensaiberica.es/clip/3df3c55e-3453-4afd-989d-e59fc82b4060_16-9-aspect-ratio_25p_0.jpg" data-alt="La España vaciada presiona para luchar contra la “emergencia demográfica”" style="width:100%;max-width:100%" height="146" width="259" loading="lazy"/></a>
+<header>
+<a href="/economia/" class="new__topic"><span>Economía</span></a>
+<a href="/economia/2021/11/24/espana-vaciada-presiona-luchar-emergencia-59889561.html" class="new__headline" ><h2>La España vaciada presiona para luchar contra la “emergencia demográfica”</h2></a>
+</header>
+</article>
+                                            </div>
+                                                                                                                                                                <div class="col-4">
+                                                
+
+<article class="new">
+<a href="/economia/2021/11/24/sindicatos-reivindican-frente-protestas-patronales-59889149.html" class="new__media" ><img class="image lozad" data-src="https://estaticos-cdn.prensaiberica.es/clip/661ee961-38b1-46a1-a6c0-4c803482da27_16-9-aspect-ratio_25p_0.jpg" data-alt="Los sindicatos se reivindican frente a las protestas patronales del campo y los transportes" style="width:100%;max-width:100%" height="146" width="259" loading="lazy"/></a>
+<header>
+<a href="/economia/" class="new__topic"><span>Economía</span></a>
+<a href="/economia/2021/11/24/sindicatos-reivindican-frente-protestas-patronales-59889149.html" class="new__headline" ><h2>Los sindicatos se reivindican frente a las protestas patronales del campo y los transportes</h2></a>
+</header>
+</article>
+                                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                
+                                
+                            </div>
+                        </div>
+                                    </div>
+            </div>
+        </div>
+        
+    
+                <div class="menu-front" id="front-section-5"
+             style="font-size:0;display:none">
+            <div class="wrapper fullwidth">
+                <div class="row">
+                    <ul class="col-2 section-item-list">
+                                                                                    <li><a
+        href="https://www.diariodemallorca.es/autores/matias-valles.html"
+                >Matías Vallés</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/autores/pilar-garces.html"
+                >Pilar Garcés</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/autores/daniel-capo.html"
+                >Daniel Capó</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/autores/jose-carlos-llop.html"
+                >José Carlos Llop</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/autores/jorge-dezcallar.html"
+                >Jorge Dezcallar</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/llama-la-atencion/"
+                >Llama la atención</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/opinion/cartas-de-los-lectores/"
+                >Cartas de los lectores</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/humor/"
+                >Humor</a>
+</li>
+                                                                        </ul>
+                                            <div class="col-10 news-gallery">
+                            <div class="row">
+
+                                                                                                                                                        <div class="col-4">
+                                                
+
+<article class="new">
+<a href="/opinion/2021/11/24/siglo-xx-policia-gobierno-impunidad-59886977.html" class="new__media" ><img class="image lozad" data-src="https://estaticos-cdn.prensaiberica.es/clip/e06dc368-974d-413a-99f0-4afb5e05efb9_16-9-aspect-ratio_25p_0.jpg" data-alt="Desde el siglo XX | La Policía contra el Gobierno: impunidad con la «ley mordaza»" style="width:100%;max-width:100%" height="146" width="259" loading="lazy"/></a>
+<header>
+<a href="/opinion/" class="new__topic"><span>Opinión</span></a>
+<a href="/opinion/2021/11/24/siglo-xx-policia-gobierno-impunidad-59886977.html" class="new__headline" ><h2>Desde el siglo XX | La Policía contra el Gobierno: impunidad con la «ley mordaza»</h2></a>
+</header>
+</article>
+                                            </div>
+                                                                                                                                                                <div class="col-4">
+                                                
+
+<article class="new">
+<a href="/opinion/2021/11/23/gabriel-alomar-i-villalonga-o-59831346.html" class="new__media" ><img class="image lozad" data-src="https://estaticos-cdn.prensaiberica.es/clip/4e03847b-444e-4925-b0e9-c60bb91358f5_16-9-aspect-ratio_25p_0.jpg" data-alt="Gabriel Alomar i Villalonga, o la generació perduda" style="width:100%;max-width:100%" height="146" width="259" loading="lazy"/></a>
+<header>
+<a href="/opinion/" class="new__topic"><span>Opinión</span></a>
+<a href="/opinion/2021/11/23/gabriel-alomar-i-villalonga-o-59831346.html" class="new__headline" ><h2>Gabriel Alomar i Villalonga, o la generació perduda</h2></a>
+</header>
+</article>
+                                            </div>
+                                                                                                                                                                <div class="col-4">
+                                                
+
+<article class="new">
+<a href="/opinion/2021/11/22/entrebancs-desigualdades-siguen-vigentes-59792455.html" class="new__media" ><img class="image lozad" data-src="https://estaticos-cdn.prensaiberica.es/clip/fb664a34-0f8a-450f-89f8-e7f4f1ed01e1_16-9-aspect-ratio_25p_0.jpg" data-alt="Entrebancs | Las desigualdades siguen vigentes" style="width:100%;max-width:100%" height="146" width="259" loading="lazy"/></a>
+<header>
+<a href="/opinion/" class="new__topic"><span>Opinión</span></a>
+<a href="/opinion/2021/11/22/entrebancs-desigualdades-siguen-vigentes-59792455.html" class="new__headline" ><h2>Entrebancs | Las desigualdades siguen vigentes</h2></a>
+</header>
+</article>
+                                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                
+                                
+                            </div>
+                        </div>
+                                    </div>
+            </div>
+        </div>
+        
+    
+                <div class="menu-front" id="front-section-6"
+             style="font-size:0;display:none">
+            <div class="wrapper fullwidth">
+                <div class="row">
+                    <ul class="col-2 section-item-list">
+                                                                                    <li><a
+        href="https://www.diariodemallorca.es/sucesos/tribunales/"
+                >Tribunales</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/sucesos/investigacion/"
+                >Investigación</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/sucesos/sucesos-mallorca/"
+                >Sucesos en Mallorca</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/sucesos/desaparecidos/"
+                >Desaparecidos</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/violencia-de-genero/"
+                >Violencia machista</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/sucesos/delitos-informaticos/"
+                >Delitos informáticos</a>
+</li>
+                                                                        </ul>
+                                            <div class="col-10 news-gallery">
+                            <div class="row">
+
+                                                                                                                                                        <div class="col-4">
+                                                
+
+<article class="new">
+<a href="/sucesos/2021/11/24/encuentran-madrid-hombre-tiro-cabeza-59889740.html" class="new__media" ><img class="image lozad" data-src="https://estaticos-cdn.prensaiberica.es/clip/68d7fe31-aa74-4024-9389-26506e7a08a0_16-9-aspect-ratio_25p_0.jpg" data-alt="Encuentran en Madrid a un hombre con un tiro en la cabeza dentro de un coche" style="width:100%;max-width:100%" height="146" width="259" loading="lazy"/></a>
+<header>
+<a href="/sucesos/" class="new__topic"><span>Caso Abierto</span></a>
+<a href="/sucesos/2021/11/24/encuentran-madrid-hombre-tiro-cabeza-59889740.html" class="new__headline" ><h2>Encuentran en Madrid a un hombre con un tiro en la cabeza dentro de un coche</h2></a>
+</header>
+</article>
+                                            </div>
+                                                                                                                                                                <div class="col-4">
+                                                
+
+<article class="new">
+<a href="/sucesos/2021/11/24/josue-nino-sevilla-desaparecio-sombra-violencia-vicaria-59889474.html" class="new__media" ><img class="image lozad" data-src="https://estaticos-cdn.prensaiberica.es/clip/4b30cc9f-7192-45f1-9b44-28f678df112f_16-9-aspect-ratio_25p_0.jpg" data-alt="Josué, el niño de Sevilla que desapareció bajo la sombra de la violencia vicaria" style="width:100%;max-width:100%" height="146" width="259" loading="lazy"/></a>
+<header>
+<a href="/sucesos/" class="new__topic"><span>Caso Abierto</span></a>
+<a href="/sucesos/2021/11/24/josue-nino-sevilla-desaparecio-sombra-violencia-vicaria-59889474.html" class="new__headline" ><h2>Josué, el niño de Sevilla que desapareció bajo la sombra de la violencia vicaria</h2></a>
+</header>
+</article>
+                                            </div>
+                                                                                                                                                                <div class="col-4">
+                                                
+
+<article class="new">
+<a href="/sucesos/2021/11/24/accidente-alcudia-59877030.html" class="new__media" ><img class="image lozad" data-src="https://estaticos-cdn.prensaiberica.es/clip/d18c6d48-1dbb-4a30-bdae-39cfc50290ae_16-9-aspect-ratio_25p_0.jpg" data-alt="Accidente en Alcúdia" style="width:100%;max-width:100%" height="146" width="259" loading="lazy"/></a>
+<header>
+<a href="/sucesos/" class="new__topic"><span>Caso Abierto</span></a>
+<a href="/sucesos/2021/11/24/accidente-alcudia-59877030.html" class="new__headline" ><h2>Accidente en Alcúdia</h2></a>
+</header>
+</article>
+                                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                
+                                
+                            </div>
+                        </div>
+                                    </div>
+            </div>
+        </div>
+        
+    
+                <div class="menu-front" id="front-section-7"
+             style="font-size:0;display:none">
+            <div class="wrapper fullwidth">
+                <div class="row">
+                    <ul class="col-2 section-item-list">
+                                                                                    <li><a
+        href="https://www.diariodemallorca.es/tags/libros/"
+                >Libros</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/ocio/cine/"
+                >Cine</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/ocio/agenda/"
+                >Agenda</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/tags/musica/"
+                >Música</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/tags/teatro/"
+                >Teatro</a>
+</li>
+                                                                        </ul>
+                                            <div class="col-10 news-gallery">
+                            <div class="row">
+
+                                                                                                                                                        <div class="col-4">
+                                                
+
+<article class="new">
+<a href="/cultura/2021/11/24/mesa-redonda-partir-videoarte-centro-59882467.html" class="new__media" ><img class="image lozad" data-src="https://estaticos-cdn.prensaiberica.es/clip/68290ab3-8219-4b13-bc56-5669656b59ad_16-9-aspect-ratio_25p_0.jpg" data-alt="Mesa redonda a partir de videoarte en el centro de cultura Sa Nostra" style="width:100%;max-width:100%" height="146" width="259" loading="lazy"/></a>
+<header>
+<a href="/cultura/" class="new__topic"><span>Cultura</span></a>
+<a href="/cultura/2021/11/24/mesa-redonda-partir-videoarte-centro-59882467.html" class="new__headline" ><h2>Mesa redonda a partir de videoarte en el centro de cultura Sa Nostra</h2></a>
+</header>
+</article>
+                                            </div>
+                                                                                                                                                                <div class="col-4">
+                                                
+
+<article class="new">
+<a href="/cultura/2021/11/24/colaboracion-caixa-uib-59882470.html" class="new__media" ><img class="image lozad" data-src="https://estaticos-cdn.prensaiberica.es/clip/0645b7e4-1c72-43e0-b265-7c40738e8300_16-9-aspect-ratio_25p_0.jpg" data-alt="Colaboración entre La Caixa y la UIB" style="width:100%;max-width:100%" height="146" width="259" loading="lazy"/></a>
+<header>
+<a href="/cultura/" class="new__topic"><span>Cultura</span></a>
+<a href="/cultura/2021/11/24/colaboracion-caixa-uib-59882470.html" class="new__headline" ><h2>Colaboración entre La Caixa y la UIB</h2></a>
+</header>
+</article>
+                                            </div>
+                                                                                                                                                                <div class="col-4">
+                                                
+
+<article class="new">
+<a href="/cultura/2021/11/24/jay-z-artista-nominaciones-historia-59888072.html" class="new__media" ><img class="image lozad" data-src="https://estaticos-cdn.prensaiberica.es/clip/e6c25cd3-515c-42fe-80c5-9c67e597b4f3_16-9-aspect-ratio_25p_0.jpg" data-alt="Jay-Z ya es el artista con más nominaciones en la historia de los Grammy" style="width:100%;max-width:100%" height="146" width="259" loading="lazy"/></a>
+<header>
+<a href="/cultura/" class="new__topic"><span>Cultura</span></a>
+<a href="/cultura/2021/11/24/jay-z-artista-nominaciones-historia-59888072.html" class="new__headline" ><h2>Jay-Z ya es el artista con más nominaciones en la historia de los Grammy</h2></a>
+</header>
+</article>
+                                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                
+                                
+                            </div>
+                        </div>
+                                    </div>
+            </div>
+        </div>
+        
+    
+                <div class="menu-front" id="front-section-8"
+             style="font-size:0;display:none">
+            <div class="wrapper fullwidth">
+                <div class="row">
+                    <ul class="col-2 section-item-list">
+                                                                                    <li><a
+        href="https://www.diariodemallorca.es/ocio/cine/"
+                >Cine</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/ocio/tv/"
+                >Televisión</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/ocio/planes/"
+                >Planes</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/ocio/agenda/"
+                >Agenda</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/ocio/gastronomia/"
+                >Gastronomía</a>
+</li>
+                                                            <li><a
+        href="https://www.restaurantesdemallorca.com/"
+                >Restaurantes en Mallorca</a>
+</li>
+                                                                        </ul>
+                                            <div class="col-10 news-gallery">
+                            <div class="row">
+
+                                                                                                                                                        <div class="col-4">
+                                                
+
+<article class="new">
+<a href="/ocio/tv/2021/11/24/lazos-sangre-isla-tentaciones-objetivo-59889045.html" class="new__media" ><img class="image lozad" data-src="https://estaticos-cdn.prensaiberica.es/clip/0fd99e05-e85d-4dfe-ac56-45af98079ca3_16-9-aspect-ratio_25p_0.jpg" data-alt="&#039;Lazos de sangre&#039;, &#039;La isla de las tentaciones&#039; y &#039;El objetivo&#039; compiten hoy por la audiencia" style="width:100%;max-width:100%" height="146" width="259" loading="lazy"/></a>
+<header>
+<a href="/ocio/tv/" class="new__topic"><span>Televisión</span></a>
+<a href="/ocio/tv/2021/11/24/lazos-sangre-isla-tentaciones-objetivo-59889045.html" class="new__headline" ><h2>&#039;Lazos de sangre&#039;, &#039;La isla de las tentaciones&#039; y &#039;El objetivo&#039; compiten hoy por la audiencia</h2></a>
+</header>
+</article>
+                                            </div>
+                                                                                                                                                                <div class="col-4">
+                                                
+
+<article class="new">
+<a href="/ocio/cine/2021/11/23/almodovar-todavia-he-leido-libro-59884696.html" class="new__media" ><img class="image lozad" data-src="https://estaticos-cdn.prensaiberica.es/clip/a67ea8a1-1390-48cd-a059-0be59f0534d2_16-9-aspect-ratio_25p_0.jpg" data-alt="Almodóvar: &quot;Todavía no he leído un libro en pantalla, el papel es un fetiche&quot;" style="width:100%;max-width:100%" height="146" width="259" loading="lazy"/></a>
+<header>
+<a href="/ocio/cine/" class="new__topic"><span>Cine</span></a>
+<a href="/ocio/cine/2021/11/23/almodovar-todavia-he-leido-libro-59884696.html" class="new__headline" ><h2>Almodóvar: &quot;Todavía no he leído un libro en pantalla, el papel es un fetiche&quot;</h2></a>
+</header>
+</article>
+                                            </div>
+                                                                                                                                                                <div class="col-4">
+                                                
+
+<article class="new">
+<a href="/ocio/tv/2021/11/23/madre-alejandro-derrumba-debate-tentaciones-59878132.html" class="new__media" ><img class="image lozad" data-src="https://estaticos-cdn.prensaiberica.es/clip/76a01d84-d546-4a39-b2d8-07966db68c56_16-9-aspect-ratio_25p_0.jpg" data-alt="La madre de Alejandro se derrumba en &#039;El debate de las tentaciones&#039;: &quot;Lo están machacando”" style="width:100%;max-width:100%" height="146" width="259" loading="lazy"/></a>
+<header>
+<a href="/ocio/tv/" class="new__topic"><span>Televisión</span></a>
+<a href="/ocio/tv/2021/11/23/madre-alejandro-derrumba-debate-tentaciones-59878132.html" class="new__headline" ><h2>La madre de Alejandro se derrumba en &#039;El debate de las tentaciones&#039;: &quot;Lo están machacando”</h2></a>
+</header>
+</article>
+                                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                
+                                
+                            </div>
+                        </div>
+                                    </div>
+            </div>
+        </div>
+        
+    
+                <div class="menu-front" id="front-section-9"
+             style="font-size:0;display:none">
+            <div class="wrapper fullwidth">
+                <div class="row">
+                    <ul class="col-2 section-item-list">
+                                                                                    <li><a
+        href="https://www.diariodemallorca.es/vida-y-estilo/salud/"
+                >Salud</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/vida-y-estilo/tecnologia/"
+                >Tecnología</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/vida-y-estilo/moda-belleza/"
+                >Moda</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/vida-y-estilo/gente/"
+                >Gente</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/vida-y-estilo/decoracion/"
+                >Decoración</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/motor/"
+                >Neomotor</a>
+</li>
+                                                            <li><a
+        href="https://www.compramejor.es/"
+                >Compramejor</a>
+</li>
+                                                            <li><a
+        href="https://www.diariodemallorca.es/buscando-respuestas/"
+                >Buscando respuestas</a>
+</li>
+                                                                        </ul>
+                                            <div class="col-10 news-gallery">
+                            <div class="row">
+
+                                                                                                                                                        <div class="col-4">
+                                                
+
+<article class="new">
+<a href="https://www.diariodemallorca.es/ideas/campus-42/42-Madrid-open-day.html" class="new__media" ><img class="image lozad" data-src="https://estaticos-cdn.prensaiberica.es/clip/9be245e9-e48e-4345-b121-e14230aa6186_16-9-aspect-ratio_25p_0.jpg" data-alt="42: el campus que me abrió las puertas a la programación" style="width:100%;max-width:100%" height="146" width="259" loading="lazy"/></a>
+<header>
+<a href="/vida-y-estilo/tecnologia/" class="new__topic"><span>Tecnología</span></a>
+<a href="https://www.diariodemallorca.es/ideas/campus-42/42-Madrid-open-day.html" class="new__headline" ><h2>42: el campus que me abrió las puertas a la programación</h2></a>
+</header>
+</article>
+                                            </div>
+                                                                                                                                                                <div class="col-4">
+                                                
+
+<article class="new">
+<a href="/vida-y-estilo/mascotas/2021/11/23/cuidar-perro-invierno-59881611.html" class="new__media" ><img class="image lozad" data-src="https://estaticos-cdn.prensaiberica.es/clip/138d87d6-16e5-47cf-94c0-60ce7166a498_16-9-aspect-ratio_25p_0.jpg" data-alt="Cómo cuidar a tu perro en invierno" style="width:100%;max-width:100%" height="146" width="259" loading="lazy"/></a>
+<header>
+<a href="/vida-y-estilo/mascotas/" class="new__topic"><span>Mascotas</span></a>
+<a href="/vida-y-estilo/mascotas/2021/11/23/cuidar-perro-invierno-59881611.html" class="new__headline" ><h2>Cómo cuidar a tu perro en invierno</h2></a>
+</header>
+</article>
+                                            </div>
+                                                                                                                                                                <div class="col-4">
+                                                
+
+<article class="new">
+<a href="/vida-y-estilo/tecnologia/videojuegos/2021/11/23/hay-fecha-lanzamiento-minecraft-caves-59879420.html" class="new__media" ><img class="image lozad" data-src="https://estaticos-cdn.prensaiberica.es/clip/dbbb8510-c613-42c3-b485-47ad61d859e0_16-9-aspect-ratio_25p_0.jpg" data-alt="Ya hay fecha de lanzamiento para Minecraft Caves &amp;  Cliffs Parte II y el Seasonal Adventure de Minecraft  Dungeons" style="width:100%;max-width:100%" height="146" width="259" loading="lazy"/></a>
+<header>
+<a href="/vida-y-estilo/tecnologia/videojuegos/" class="new__topic"><span>Videojuegos</span></a>
+<a href="/vida-y-estilo/tecnologia/videojuegos/2021/11/23/hay-fecha-lanzamiento-minecraft-caves-59879420.html" class="new__headline" ><h2>Ya hay fecha de lanzamiento para Minecraft Caves &amp;  Cliffs Parte II y el Seasonal Adventure de Minecraft  Dungeons</h2></a>
+</header>
+</article>
+                                            </div>
+                                                                                                                                                                                                                                                                                                                                                                                
+                                
+                            </div>
+                        </div>
+                                    </div>
+            </div>
+        </div>
+        
+    
+
+        <button class="btn-header-search" type="button" data-menu-open="search">
+            <i class="i-search"></i>
+        </button>
+
+        
+
+<div class="menu--user">
+    <button type="button" class="menu--user__close" aria-label="cerrar" data-menu-close>
+        <i class="i-close_gallery"></i>
+    </button>
+</div>
+
+<a href="https://micuenta.diariodemallorca.es/tp/login"
+   data-login-url="https://micuenta.diariodemallorca.es/tp/login"
+   data-profile-url="https://micuenta.diariodemallorca.es/tp/perfil"
+   class="btn-header-user" data-menu-open="user">
+    <i class="i-user"></i>
+</a>
+
+<script type="text/html" id="menu--user__logged">
+<ul>
+        <li><a href="https://micuenta.diariodemallorca.es/tp/perfil" class="">Ver perfil</a></li>
+    <li><a href="https://micuenta.diariodemallorca.es/tp/perfil/favoritos" class="">Ver noticias guardadas</a></li>
+    <li><a href="https://micuenta.diariodemallorca.es/tp/logout" class="close">Cerrar sesión</a></li>
+</ul>
+</script>
+
+<script type="text/html" id="menu--user__subscriber">
+<ul>
+    <li><a href="https://micuenta.diariodemallorca.es/tp/perfil" class="">Ver perfil</a></li>
+    <li><a href="https://micuenta.diariodemallorca.es/tp/perfil/favoritos" class="">Ver noticias guardadas</a></li>
+    <li><a href="https://micuenta.diariodemallorca.es/tp/logout" class="close">Cerrar sesión</a></li>
+</ul>
+</script>
+
+        
+<a class="btn-header-premium" href="https://micuenta.diariodemallorca.es/tp/suscripcion/galeria" data-hide-for-subscribers="true">
+    <span>Suscríbete</span>
+    <span class="btn-header-premium__price"></span>
+</a>
+
+        <a class="btn-header-premium" href="https://kiosco.diariodemallorca.es/" data-show-for-subscribers="true" style="display: none">
+        <span>Kiosko</span>
+        <span class="btn-header-premium__price"></span>
+    </a>
+
+                    
+
+<article class="mega-menu" style="font-size:0;">
+
+    <div class="mega-menu__medium">
+        <button class="mega-menu__close">
+            <i class="i-close_gallery"></i>
+        </button>
+
+        
+<div class="mega-menu__sections">
+            <nav class="mega-menu-item" itemscope="itemscope" 
+            itemtype="http://schema.org/SiteNavigationElement">
+            <ul class="mega-menu-item__list">
+                <li class="mega-menu-item__title" itemprop="name">
+                    <a href="https://www.diariodemallorca.es/local/" itemprop="url">
+                        Local
+                        <i class="i-arrow-right"></i>
+                    </a>
+                </li>
+                                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/mallorca/" itemprop="url">
+                                <span>Mallorca</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/palma/" itemprop="url">
+                                <span>Diario de Palma</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/part-forana/" itemprop="url">
+                                <span>Part Forana</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/municipios.html" itemprop="url">
+                                <span>Municipios</span>
+                            </a>
+                        </li>
+                                                </ul>
+        </nav>
+            <nav class="mega-menu-item" itemscope="itemscope" 
+            itemtype="http://schema.org/SiteNavigationElement">
+            <ul class="mega-menu-item__list">
+                <li class="mega-menu-item__title" itemprop="name">
+                    <a href="https://www.diariodemallorca.es/mas-noticias/" itemprop="url">
+                        Más noticias
+                        <i class="i-arrow-right"></i>
+                    </a>
+                </li>
+                                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/nacional/" itemprop="url">
+                                <span>Nacional</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/internacional/" itemprop="url">
+                                <span>Internacional</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/sociedad/" itemprop="url">
+                                <span>Sociedad</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/tags/ciencia/" itemprop="url">
+                                <span>Ciencia</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/verde-y-azul/" itemprop="url">
+                                <span>Verde y azul</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/tendencias21/" itemprop="url">
+                                <span>Tendencias 21</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/educar-es-todo/" itemprop="url">
+                                <span>Educar es todo</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/especiales/" itemprop="url">
+                                <span>Especiales DM</span>
+                            </a>
+                        </li>
+                                                </ul>
+        </nav>
+            <nav class="mega-menu-item" itemscope="itemscope" 
+            itemtype="http://schema.org/SiteNavigationElement">
+            <ul class="mega-menu-item__list">
+                <li class="mega-menu-item__title" itemprop="name">
+                    <a href="https://www.diariodemallorca.es/deportes/" itemprop="url">
+                        Deportes
+                        <i class="i-arrow-right"></i>
+                    </a>
+                </li>
+                                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/tags/futbol/" itemprop="url">
+                                <span>Fútbol</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/rcd-mallorca/" itemprop="url">
+                                <span>RCD Mallorca</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/atletico-balear/" itemprop="url">
+                                <span>Atlético Baleares</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/tags/rafa-nadal/" itemprop="url">
+                                <span>Rafa Nadal</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/tags/baloncesto/" itemprop="url">
+                                <span>Baloncesto</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/tags/formula-1/" itemprop="url">
+                                <span>Formula 1</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/motogp/" itemprop="url">
+                                <span>MotoGP</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/deportes/futbol/" itemprop="url">
+                                <span>Resultados</span>
+                            </a>
+                        </li>
+                                                </ul>
+        </nav>
+            <nav class="mega-menu-item" itemscope="itemscope" 
+            itemtype="http://schema.org/SiteNavigationElement">
+            <ul class="mega-menu-item__list">
+                <li class="mega-menu-item__title" itemprop="name">
+                    <a href="https://www.diariodemallorca.es/economia/" itemprop="url">
+                        Economía
+                        <i class="i-arrow-right"></i>
+                    </a>
+                </li>
+                                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/finanzas-personales/" itemprop="url">
+                                <span>Finanzas personales</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/economia/diario-de-negocios/" itemprop="url">
+                                <span>Diario de Negocios</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/empleo-en-mallorca/" itemprop="url">
+                                <span>Empleo</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/vivienda-en-mallorca/" itemprop="url">
+                                <span>Vivienda</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/economia/activos/" itemprop="url">
+                                <span>Activos</span>
+                            </a>
+                        </li>
+                                                </ul>
+        </nav>
+            <nav class="mega-menu-item" itemscope="itemscope" 
+            itemtype="http://schema.org/SiteNavigationElement">
+            <ul class="mega-menu-item__list">
+                <li class="mega-menu-item__title" itemprop="name">
+                    <a href="https://www.diariodemallorca.es/opinion/" itemprop="url">
+                        Opinión
+                        <i class="i-arrow-right"></i>
+                    </a>
+                </li>
+                                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/autores/matias-valles.html" itemprop="url">
+                                <span>Matías Vallés</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/autores/pilar-garces.html" itemprop="url">
+                                <span>Pilar Garcés</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/autores/daniel-capo.html" itemprop="url">
+                                <span>Daniel Capó</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/autores/jose-carlos-llop.html" itemprop="url">
+                                <span>José Carlos Llop</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/autores/jorge-dezcallar.html" itemprop="url">
+                                <span>Jorge Dezcallar</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/llama-la-atencion/" itemprop="url">
+                                <span>Llama la atención</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/opinion/cartas-de-los-lectores/" itemprop="url">
+                                <span>Cartas de los lectores</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/humor/" itemprop="url">
+                                <span>Humor</span>
+                            </a>
+                        </li>
+                                                </ul>
+        </nav>
+            <nav class="mega-menu-item" itemscope="itemscope" 
+            itemtype="http://schema.org/SiteNavigationElement">
+            <ul class="mega-menu-item__list">
+                <li class="mega-menu-item__title" itemprop="name">
+                    <a href="https://www.diariodemallorca.es/sucesos/" itemprop="url">
+                        Caso Abierto
+                        <i class="i-arrow-right"></i>
+                    </a>
+                </li>
+                                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/sucesos/tribunales/" itemprop="url">
+                                <span>Tribunales</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/sucesos/investigacion/" itemprop="url">
+                                <span>Investigación</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/sucesos/sucesos-mallorca/" itemprop="url">
+                                <span>Sucesos en Mallorca</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/sucesos/desaparecidos/" itemprop="url">
+                                <span>Desaparecidos</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/violencia-de-genero/" itemprop="url">
+                                <span>Violencia machista</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/sucesos/delitos-informaticos/" itemprop="url">
+                                <span>Delitos informáticos</span>
+                            </a>
+                        </li>
+                                                </ul>
+        </nav>
+            <nav class="mega-menu-item" itemscope="itemscope" 
+            itemtype="http://schema.org/SiteNavigationElement">
+            <ul class="mega-menu-item__list">
+                <li class="mega-menu-item__title" itemprop="name">
+                    <a href="https://www.diariodemallorca.es/cultura/" itemprop="url">
+                        Cultura
+                        <i class="i-arrow-right"></i>
+                    </a>
+                </li>
+                                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/tags/libros/" itemprop="url">
+                                <span>Libros</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/ocio/cine/" itemprop="url">
+                                <span>Cine</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/ocio/agenda/" itemprop="url">
+                                <span>Agenda</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/tags/musica/" itemprop="url">
+                                <span>Música</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/tags/teatro/" itemprop="url">
+                                <span>Teatro</span>
+                            </a>
+                        </li>
+                                                </ul>
+        </nav>
+            <nav class="mega-menu-item" itemscope="itemscope" 
+            itemtype="http://schema.org/SiteNavigationElement">
+            <ul class="mega-menu-item__list">
+                <li class="mega-menu-item__title" itemprop="name">
+                    <a href="https://www.diariodemallorca.es/ocio/" itemprop="url">
+                        Ocio
+                        <i class="i-arrow-right"></i>
+                    </a>
+                </li>
+                                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/ocio/cine/" itemprop="url">
+                                <span>Cine</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/ocio/tv/" itemprop="url">
+                                <span>Televisión</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/ocio/planes/" itemprop="url">
+                                <span>Planes</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/ocio/agenda/" itemprop="url">
+                                <span>Agenda</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/ocio/gastronomia/" itemprop="url">
+                                <span>Gastronomía</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.restaurantesdemallorca.com/" itemprop="url">
+                                <span>Restaurantes en Mallorca</span>
+                            </a>
+                        </li>
+                                                </ul>
+        </nav>
+            <nav class="mega-menu-item" itemscope="itemscope" 
+            itemtype="http://schema.org/SiteNavigationElement">
+            <ul class="mega-menu-item__list">
+                <li class="mega-menu-item__title" itemprop="name">
+                    <a href="https://www.diariodemallorca.es/vida-y-estilo/" itemprop="url">
+                        Vida y Estilo
+                        <i class="i-arrow-right"></i>
+                    </a>
+                </li>
+                                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/vida-y-estilo/salud/" itemprop="url">
+                                <span>Salud</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/vida-y-estilo/tecnologia/" itemprop="url">
+                                <span>Tecnología</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/vida-y-estilo/moda-belleza/" itemprop="url">
+                                <span>Moda</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/vida-y-estilo/gente/" itemprop="url">
+                                <span>Gente</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/vida-y-estilo/decoracion/" itemprop="url">
+                                <span>Decoración</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/motor/" itemprop="url">
+                                <span>Neomotor</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.compramejor.es/" itemprop="url">
+                                <span>Compramejor</span>
+                            </a>
+                        </li>
+                                            <li itemprop="name">
+                            <a href="https://www.diariodemallorca.es/buscando-respuestas/" itemprop="url">
+                                <span>Buscando respuestas</span>
+                            </a>
+                        </li>
+                                                </ul>
+        </nav>
+    </div>
+
+        
+
+
+
+<div class="mega-menu-sidebar" itemscope="itemscope"
+     itemtype="http://schema.org/SiteNavigationElement">
+    <nav class="mega-menu-sidebar__list" data-navigation-id="758">
+        <ul>
+                            <li itemprop="name">
+                                            <span class="menu-default"><span>Multimedia</span></span>
+                                                                <ul class="mega-menu-sidebar__sublist">
+                                                            <li itemprop="name">
+                                                                            <a class="menu-default" href="https://www.diariodemallorca.es/videos/"   itemprop="url"><span>Vídeos</span></a>
+                                                                    </li>
+                                                            <li itemprop="name">
+                                                                            <a class="menu-default" href="https://www.diariodemallorca.es/fotos/"   itemprop="url"><span>Fotogalerías</span></a>
+                                                                    </li>
+                                                    </ul>
+                                    </li>
+                            <li itemprop="name">
+                                            <span class="menu-default"><span>Servicios</span></span>
+                                                                <ul class="mega-menu-sidebar__sublist">
+                                                            <li itemprop="name">
+                                                                            <a class="menu-default" href="https://juegos.diariodemallorca.es/"   itemprop="url"><span>Pasatiempos</span></a>
+                                                                    </li>
+                                                            <li itemprop="name">
+                                                                            <a class="menu-default" href="https://tiempo.diariodemallorca.es/"   itemprop="url"><span>Tiempo</span></a>
+                                                                    </li>
+                                                            <li itemprop="name">
+                                                                            <a class="menu-default" href="/blogs/"   itemprop="url"><span>Blogs</span></a>
+                                                                    </li>
+                                                            <li itemprop="name">
+                                                                            <a class="menu-default" href="https://www.diariodemallorca.es/esquelas/"   itemprop="url"><span>Esquelas</span></a>
+                                                                    </li>
+                                                            <li itemprop="name">
+                                                                            <a class="menu-default" href="/newsletters/"   itemprop="url"><span>Newsletter</span></a>
+                                                                    </li>
+                                                            <li itemprop="name">
+                                                                            <a class="menu-default" href="/hemeroteca/"   itemprop="url"><span>Hemeroteca</span></a>
+                                                                    </li>
+                                                            <li itemprop="name">
+                                                                            <a class="menu-default" href="/lo-ultimo/"   itemprop="url"><span>Lo último</span></a>
+                                                                    </li>
+                                                            <li itemprop="name">
+                                                                            <a class="menu-default" href="/rss.html"   itemprop="url"><span>RSS</span></a>
+                                                                    </li>
+                                                            <li itemprop="name">
+                                                                            <a class="menu-default" href="/sorteos/"   itemprop="url"><span>Sorteos</span></a>
+                                                                    </li>
+                                                            <li itemprop="name">
+                                                                            <a class="menu-default" href="/mapaweb/"   itemprop="url"><span>Mapa Web</span></a>
+                                                                    </li>
+                                                            <li itemprop="name">
+                                                                            <a class="menu-default" href="/tags/"   itemprop="url"><span>Tags</span></a>
+                                                                    </li>
+                                                            <li itemprop="name">
+                                                                            <a class="menu-default" href="https://www.diariodemallorca.es/local/camaras-en-directo-de-mallorca/"   itemprop="url"><span>Camaras en directo</span></a>
+                                                                    </li>
+                                                    </ul>
+                                    </li>
+                            <li itemprop="name">
+                                            <span class="menu-default"><span>Clasificados</span></span>
+                                                                <ul class="mega-menu-sidebar__sublist">
+                                                            <li itemprop="name">
+                                                                            <a class="menu-default" href="https://www.iberempleos.es/ofertas-empleo/mallorca"   itemprop="url"><span>Empleo Mallorca</span></a>
+                                                                    </li>
+                                                            <li itemprop="name">
+                                                                            <a class="menu-default" href="https://www.tucasa.com/compra-venta/viviendas/mallorca/?r=&amp;idz=0007.0001"   itemprop="url"><span>Vivienda Mallorca</span></a>
+                                                                    </li>
+                                                            <li itemprop="name">
+                                                                            <a class="menu-default" href="https://www.tucasa.com/alquiler/viviendas/mallorca/?r=&amp;idz=0007.0001"   itemprop="url"><span>Alquiler Mallorca</span></a>
+                                                                    </li>
+                                                            <li itemprop="name">
+                                                                            <a class="menu-default" href="https://ocasion.neomotor.com/coches-segunda-mano-mallorca"   itemprop="url"><span>Coches de ocasión</span></a>
+                                                                    </li>
+                                                    </ul>
+                                    </li>
+                    </ul>
+    </nav>
+    <div class="rrss rrss--mega-menu-sidebar">
+        <p>Síguenos en redes sociales:</p>
+        <ul class="rrss__list">
+                            <li class="rrss__item">
+                    <a href="https://www.facebook.com/diariodemallorca.es/"
+                       title="Síguenos en Facebook">
+                        <i class="i-facebook"></i>
+                    </a>
+                </li>
+                                        <li class="rrss__item rrss__item--twitter">
+                    <a href="https://twitter.com/diariomallorca"
+                       title="Síguenos en Twitter">
+                        <i class="i-twitter"></i>
+                    </a>
+                </li>
+                                        <li class="rrss__item">
+                    <a href="https://www.instagram.com/diariodemallorca"
+                       title="Síguenos en Instagram">
+                        <i class="i-instagram"></i>
+                    </a>
+                </li>
+                                        <li class="rrss__item">
+                    <a href="https://www.linkedin.com//company/diario-de-mallorca/"
+                       title="Síguenos en LinkedIn">
+                        <i class="i-linkedin"></i>
+                    </a>
+                </li>
+                    </ul>
+    </div>
+</div>
+
+    </div>
+
+    
+</article>
+
+        
+        <a href="/" itemprop="url" >
+                                                                        <img src="https://estaticos-cdn.diariodemallorca.es/images/logo-diariodemallorca.png?id=7e2452cf08a8d10457ec" alt="Diario de Mallorca">
+                                                        </a>
+    </article>
+
+    <article class="header--medium">
+                <h2>
+            <meta content="Diario de Mallorca" itemprop="name">
+            <a href="/" itemtype="https://schema.org/ImageObject" itemscope itemprop="logo">
+                                                            <img src="https://estaticos-cdn.diariodemallorca.es/images/logo-diariodemallorca.png?id=7e2452cf08a8d10457ec" alt="Diario de Mallorca" itemprop="url">
+                                                </a>
+        </h2>
+
+        
+                    </article>
+
+    
+    <article class="header--down">
+            
+
+<nav class="section-menu-responsive">
+    <ul class="section-menu-responsive__links" itemscope
+        itemtype="http://schema.org/SiteNavigationElement">
+                                    <li class="section-menu-responsive__link" itemprop="name">
+                            
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/premium/"            class="menu-default premium"        title="DM+"
+>
+                <span>
+            <img src="/assets/images/premium/diariodemallorca-premium-gold.svg" class="" alt="DM+" loading="lazy">
+        </span>
+    </a>
+                                            <li class="section-menu-responsive__link" itemprop="name">
+                            
+<a itemprop="url"
+    href="http://diariodemallorca.es/local/"            class="menu-default"        title="Local"
+>
+                        <span
+                            >
+                Local
+            </span>
+            </a>
+                </li>
+                                            <li class="section-menu-responsive__link" itemprop="name">
+                            
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/lo-mas-visto/"            class="menu-default"        title="Lo más visto"
+>
+                        <span
+                            >
+                Lo más visto
+            </span>
+            </a>
+                </li>
+                                            <li class="section-menu-responsive__link" itemprop="name">
+                            
+<a itemprop="url"
+    href="https://www.diariodemallorca.es/lo-ultimo/"            class="menu-default"        title="Lo último"
+>
+                        <span
+                            >
+                Lo último
+            </span>
+            </a>
+                </li>
+                                    </ul>
+</nav>
+    </article>
+
+    <div class="search-layer">
+        <button class="search-layer__close">
+            <i class="i-close_gallery"></i>
+        </button>
+        <div class="search-layer__box">
+            <form action="https://www.diariodemallorca.es/buscador" method="get">
+                <button><i class="i-search"></i></button>
+                <input type="text" name="text" placeholder="Introduce el término a buscar" autofocus="autofocus">
+            </form>
+        </div>
+    </div>
+
+</header>
+
+
+
+
+        <main class="bbnx-template article-template">
+        <div class="wrapper">
+            <section class="row">
+                <div class="error-404 col-12">
+                    <div class="col-12 error-404__icon"></div>
+                    <div class="col-12 error-404__title">
+                        <h1>Página no encontrada</h1>
+                    </div>
+                    <div class="col-12 error-404__message">
+                        Compruebe que ha escrito correctamente la dirección de la página. Si no encuentra los que busca, puede:
+                    </div>
+
+                    <div class="row error-404__buttons">
+                        <div class="error-404__button col-3 col-xs-12">
+                            <a href="/">
+                                <button class="btn-view-more portada" style="display: block;">Ir a la portada</button>
+                            </a>
+                        </div>
+                        <div class="error-404__button col-3 col-xs-12">
+                                                                                    <a href="https://www.diariodemallorca.es/hemeroteca">
+                                <button class="btn-view-more hemeroteca" style="display: block;">Ir a la hemeroteca</button>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="error-404__search">
+                        <div class="col-9 col-md-12 col-xs-12">
+                            <form class="form-search sk--big" action="https://www.diariodemallorca.es/buscador" accept-charset="UTF-8" method="get">
+                                <div class="form-line">
+                                    <input type="text" name="text" class="input prescriptive-menu-trigger" placeholder="Introduce la palabra a buscar" autocomplete="off" />
+                                </div>
+                                <button class="btn-search__mini-search" type="submit">
+                                    <i class="i-search"></i>
+                                </button>
+                                <div class="prescriptive-menu" name="prescriptive-menu">
+                                    <ul>
+                                        <li><a href="#" class="">Elemento <strong>buscado</strong></a></li>
+                                        <li><a href="#" class="">Segundo elemento <strong>buscado</strong></a></li>
+                                        <li><a href="#" class="">Sexto elemento <strong>buscado</strong></a></li>
+                                    </ul>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    
+<footer class="footer ">
+    <div class="wrapper">
+        <div
+        class="footer-up lozad" data-background-image="/images/border-decoration.png"        >
+            <div class="footer-up__decoration"></div>
+                            
+
+                        
+    <nav class="section-menu" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+        <ul class="section-menu__links">
+                            <li itemprop="name">
+                    <a id="local" class="menu-default" href="https://www.diariodemallorca.es/local/" itemprop="url">
+                                                    <span itemprop="name">Local</span>
+                                            </a>
+                </li>
+                            <li itemprop="name">
+                    <a id="masnoticias" class="menu-default" href="https://www.diariodemallorca.es/mas-noticias/" itemprop="url">
+                                                    <span itemprop="name">Más noticias</span>
+                                            </a>
+                </li>
+                            <li itemprop="name">
+                    <a id="deportes" class="menu-default" href="https://www.diariodemallorca.es/deportes/" itemprop="url">
+                                                    <span itemprop="name">Deportes</span>
+                                            </a>
+                </li>
+                            <li itemprop="name">
+                    <a id="economia" class="menu-default" href="https://www.diariodemallorca.es/economia/" itemprop="url">
+                                                    <span itemprop="name">Economía</span>
+                                            </a>
+                </li>
+                            <li itemprop="name">
+                    <a id="opinion" class="menu-default" href="https://www.diariodemallorca.es/opinion/" itemprop="url">
+                                                    <span itemprop="name">Opinión</span>
+                                            </a>
+                </li>
+                            <li itemprop="name">
+                    <a id="casoabierto" class="menu-default" href="https://www.diariodemallorca.es/sucesos/" itemprop="url">
+                                                    <span itemprop="name">Caso Abierto</span>
+                                            </a>
+                </li>
+                            <li itemprop="name">
+                    <a id="cultura" class="menu-default" href="https://www.diariodemallorca.es/cultura/" itemprop="url">
+                                                    <span itemprop="name">Cultura</span>
+                                            </a>
+                </li>
+                            <li itemprop="name">
+                    <a id="ocio" class="menu-default" href="https://www.diariodemallorca.es/ocio/" itemprop="url">
+                                                    <span itemprop="name">Ocio</span>
+                                            </a>
+                </li>
+                            <li itemprop="name">
+                    <a id="vidayestilo" class="menu-default" href="https://www.diariodemallorca.es/vida-y-estilo/" itemprop="url">
+                                                    <span itemprop="name">Vida y Estilo</span>
+                                            </a>
+                </li>
+                            <li itemprop="name">
+                    <a id="dm" class="menu-default" href="https://www.diariodemallorca.es/premium/" itemprop="url">
+                                                    <img class="section-menu__premium-link" src="/assets/images/premium/diariodemallorca-premium-gold.svg" alt="Premium" loading="lazy">
+                                            </a>
+                </li>
+                    </ul>
+    </nav>
+            
+
+<ul class="footer-up__group-links">
+    <li class="footer-up__brand-link">
+        <a href="https://www.diariodemallorca.es/">diariodemallorca.es</a>
+    </li>
+                        <li>
+                <a href="/localizacion/"  >
+                    Contacto
+                </a>
+            </li>
+                    <li>
+                <a href="/newsletters/"  >
+                    Newsletter
+                </a>
+            </li>
+                    <li>
+                <a href="https://publicidad.diariodemallorca.es/"  >
+                    Tarifas de Publicidad
+                </a>
+            </li>
+                    <li>
+                <a href="http://www.becontent.es/"  >
+                    Branded Content
+                </a>
+            </li>
+                    <li>
+                <a href="/rss.html"  >
+                    RSS
+                </a>
+            </li>
+            </ul>
+            
+
+
+<article class="footer-up__medias row">
+
+        <div class="footer-up__epi-logos col-3 col-md-12 col-xs-12">
+    <a href="https://www.prensaiberica.es/" target="_blank" rel="nofollow">
+                <img src="https://estaticos-cdn.diariodemallorca.es/images/footer/prensa-iberica-logo.png?id=4ad3bca1b0d2e44fe794" alt="Prensa Ibérica Logo" loading="lazy">
+        </a>
+    <a href="https://www.prensaiberica360.es/" target="_blank" rel="nofollow">
+
+                            <img src="https://estaticos-cdn.diariodemallorca.es/images/footer/prensa-iberica-360.png?id=00bc9e3946af531b5a7b" alt="Prensa Ibérica 360" loading="lazy">
+            </a>
+        </div>
+
+        <div class="footer-up__medias-group col-9 col-md-12 col-xs-12 row">             <span class="main-section">Otras webs de Prensa Ibérica Media</span>
+            <ul class="row">
+            
+                                    <li class="col-6">
+                                    <span id="prensa" class="main-section" href="" itemprop="url">Prensa</span>
+                                            <ul class="row footer-up__medias-group__block">
+                                                    <li class="col-6">
+                                <a href="https://www.diaridegirona.cat" class=""  target="_blank" >Diari de Girona</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.diariocordoba.com/" class=""  target="_blank" >Diario Córdoba</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.diariodeibiza.es" class=""  target="_blank" >Diario de Ibiza</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.informacion.es" class=""  target="_blank" >Diario Información</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.diariodemallorca.es" class=""  target="_blank" >Diario de Mallorca</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.eldia.es" class=""  target="_blank" >El Día</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.emporda.info" class=""  target="_blank" >Empordà</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.elperiodicodearagon.com/" class=""  target="_blank" >El Periódico de Aragón</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.elperiodico.com/es/" class=""  target="_blank" >El Periódico de Catalunya</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.epe.es/es/" class=""  target="_blank" >El Periódico de España</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.elperiodicoextremadura.com/" class=""  target="_blank" >El Periódico de Extremadura</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.elperiodicomediterraneo.com/" class=""  target="_blank" >El Periódico Mediterráneo</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.farodevigo.es" class=""  target="_blank" >Faro de Vigo</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://lacronicadebadajoz.elperiodicoextremadura.com/" class=""  target="_blank" >La Crónica de Badajoz</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.lne.es" class=""  target="_blank" >La Nueva España</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.laopinioncoruna.es" class=""  target="_blank" >La Opinión A Coruña</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.laopiniondemurcia.es" class=""  target="_blank" >La Opinión de Murcia</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.laopiniondemalaga.es" class=""  target="_blank" >La Opinión de Málaga</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.laopiniondezamora.es" class=""  target="_blank" >La Opinión de Zamora</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.laprovincia.es" class=""  target="_blank" >La Provincia</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.levante-emv.com" class=""  target="_blank" >Levante-EMV</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.mallorcazeitung.es" class=""  target="_blank" >Mallorca Zeitung</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.regio7.cat" class=""  target="_blank" >Regio7</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.sport.es/es/" class=""  target="_blank" >Sport</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.superdeporte.es" class=""  target="_blank" >Superdeporte</a>
+                            </li>
+                                                </ul>
+                                                
+                                    <span id="radioytelevision" class="main-section" href="" itemprop="url">Radio y televisión</span>
+                                            <ul class="row footer-up__medias-group__block">
+                                                    <li class="col-6">
+                                <a href="http://www.levantetv.es/" class=""  target="_blank" >LevanteTV</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="http://www.informaciontv.es/" class=""  target="_blank" >InformacionTV</a>
+                            </li>
+                                                </ul>
+                                                        </li>
+                            
+                                    <li class="col-5">
+                                    <span id="revistas" class="main-section" href="" itemprop="url">Revistas</span>
+                                            <ul class="row footer-up__medias-group__block">
+                                                    <li class="col-6">
+                                <a href="https://www.cuore.es/" class=""  target="_blank" >Cuore</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.instagram.com/kidszeta/" class=""  target="_blank" >Cartoon Network</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.woman.es/" class=""  target="_blank" >Woman</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.instagram.com/kidszeta/" class=""  target="_blank" >Neox Kidz</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.stilo.es/" class=""  target="_blank" >Stilo</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.instagram.com/kidszeta/" class=""  target="_blank" >Disney Channel</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://viajar.elperiodico.com/" class=""  target="_blank" >Viajar</a>
+                            </li>
+                                                </ul>
+                                                
+                                    <span id="canalestematicos" class="main-section" href="" itemprop="url">Canales temáticos</span>
+                                            <ul class="row footer-up__medias-group__block">
+                                                    <li class="col-6">
+                                <a href="https://buscandorespuestas.lne.es/" class="" rel="nofollow" target="_blank" >Buscandorespuestas.com</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://tendencias21.levante-emv.com/" class="" rel="nofollow" target="_blank" >Tendencias21</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://verdeyazul.diarioinformacion.com/" class="" rel="nofollow" target="_blank" >Verde y azul</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://formula1.lne.es/" class="" rel="nofollow" target="_blank" >Fórmula1</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.compramejor.es/" class="" rel="nofollow" target="_blank" >Compramejor</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.iberempleos.es/" class="" rel="nofollow" target="_blank" >Iberempleos</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://guapisimas.stilo.es/" class="" rel="nofollow" target="_blank" >Guapisimas</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.neomotor.com/" class="" rel="nofollow" target="_blank" >Neomotor</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.laloterianavidad.com/" class="" rel="nofollow" target="_blank" >Loteria Navidad</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.premios-cine.com/oscars/" class="" rel="nofollow" target="_blank" >Premios Oscar</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.premios-cine.com/goya/" class="" rel="nofollow" target="_blank" >Premios Goya</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://ocasion.neomotor.com/" class="" rel="nofollow" target="_blank" >Coches de Ocasión</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.tucasa.com/" class="" rel="nofollow" target="_blank" >Tucasa</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.iberpisos.es/" class="" rel="nofollow" target="_blank" >Iberpisos</a>
+                            </li>
+                                                    <li class="col-6">
+                                <a href="https://www.cambalache.es/" class="" rel="nofollow" target="_blank" >Cambalache</a>
+                            </li>
+                                                </ul>
+                                                        </li>
+                                        </ul>
+        </div>
+
+</article>
+        </div>
+    </div>
+    
+<article class="footer-down">
+    <div class="wrapper">
+        <p>© Editora Balear, S.A<br>Todos los derechos reservados</p>
+                    <nav>
+                <ul class="footer-down__menu">
+                                            <li class="footer-down__item">
+                            <a href="https://micuenta.diariodemallorca.es/protecciondatos?gdprTipo=3&amp;_ga=2.173485539.1762641595.1592382514-2139285737.1579773887" title="Aviso Legal">
+                                Aviso Legal
+                            </a>
+                        </li>
+                                            <li class="footer-down__item">
+                            <a href="https://www.prensaiberica.es/politica-de-privacidad-resumida/" title="Política de privacidad y cookies">
+                                Política de privacidad y cookies
+                            </a>
+                        </li>
+                                             <li class="footer-down__item">
+                             <a title="Preferencias de privacidad"
+                                href="javascript:Didomi.preferences.show();">
+                                 Preferencias de privacidad
+                             </a>
+                        </li>
+                </ul>
+            </nav>
+            </div>
+</article>
+</footer>
+
+
+    <div class="share-modal">
+    <div class="share-modal__title">
+        <h2>Compartir el artículo</h2>
+        <i class="i-close_gallery"></i>
+    </div>
+    <div class="share-modal__article-info">
+        <div class="share-modal__article-info--text">
+            <span class="headline"></span>
+            <p class="h2">
+                <a class="title" href="" aria-label="Compartir">Compartir una noticia</a>
+            </p>
+        </div>
+
+        <a class="share-modal__article-info--image">
+            <img class="image" src="" alt="" loading="lazy">
+        </a>
+    </div>
+    <div class="share-modal__social-networks">
+        <a href="" title="facebook" target="_blank" class="social-network facebook">
+            <i class="i-facebook"></i>
+            Facebook
+        </a>
+        <a href="" title="twitter" target="_blank" class="social-network twitter" data-user="">
+            <i class="i-twitter"></i>
+            Twitter
+        </a>
+        <a href="" title="linkedin" target="_blank" class="social-network linkedin">
+            <i class="i-linkedin"></i>
+            Linkedin
+        </a>
+        <a href="" title="whatsapp" target="_blank" class="social-network whatsapp">
+            <i class="i-whatsapp"></i>
+            Whatsapp
+        </a>
+        <a href="" title="telegram" target="_blank" class="social-network telegram">
+            <i class="i-telegram"></i>
+            Telegram
+        </a>
+        <a href="" title="mail" target="_blank" class="social-network mail">
+            <i class="i-mail"></i>
+            Correo electrónico
+        </a>
+    </div>
+</div>
+<div class="backdrop"></div>
+
+
+<!--[if IE]>
+<script src="https://estaticos-cdn.diariodemallorca.es/js/appie11.js?id=f1dbab570558fb5fecd7" defer></script>
+<![endif]-->
+<![if !IE]>
+<script src="https://estaticos-cdn.diariodemallorca.es/js/app.js?id=f1dbab570558fb5fecd7" defer></script>
+<![endif]>
+    
+
+
+</body>
+</html>
