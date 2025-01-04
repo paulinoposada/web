@@ -1,13 +1,13 @@
 /*
- * Rui Santos
- * Complete Project Details http://randomnerdtutorials.com
+ * 3 temp sensors DS18B20
 */
 
 #include <OneWire.h>
 #include <DallasTemperature.h>
 
-// Data wire is plugged into port 4 on the Arduino
-#define ONE_WIRE_BUS 4
+// Data wire is plugged into port 3 on the Arduino
+#define ONE_WIRE_BUS 2
+
 // Setup a oneWire instance to communicate with any OneWire devices (not just Maxim/Dallas temperature ICs)
 OneWire oneWire(ONE_WIRE_BUS);
 
@@ -51,6 +51,8 @@ void setup(void) {
   }
 }
 
+
+
 void loop(void) { 
   sensors.requestTemperatures(); // Send the command to get temperatures
   
@@ -71,7 +73,7 @@ void loop(void) {
     Serial.println(DallasTemperature::toFahrenheit(tempC)); // Converts tempC to Fahrenheit
     }   
   }
-  delay(60000);
+  delay(5000);
 }
 
 // function to print a device address

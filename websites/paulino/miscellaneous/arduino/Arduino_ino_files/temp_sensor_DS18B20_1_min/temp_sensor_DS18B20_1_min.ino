@@ -8,7 +8,7 @@
 #include <DallasTemperature.h>
 
 // Data wire is conntec to the Arduino digital pin 3
-#define ONE_WIRE_BUS 3
+#define ONE_WIRE_BUS 2
 
 // Setup a oneWire instance to communicate with any OneWire devices
 OneWire oneWire(ONE_WIRE_BUS);
@@ -33,5 +33,5 @@ void loop(void){
   Serial.print(sensors.getTempCByIndex(0)); 
   Serial.print(" - Fahrenheit temperature: ");
   Serial.println(sensors.getTempFByIndex(0));
-  delay(3000);
+  delay(500);
 }

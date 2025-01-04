@@ -5,6 +5,7 @@
  * SD card module from lctech (www.lctech-inc.com)
  * rtc module DS1307
  * LCD
+ * Pushbuton to switch LCD on/off
  */
 
 
@@ -38,6 +39,21 @@ DallasTemperature sensors(&oneWire);
 
 // LCD - initialize the library with the numbers of the interface pins
 LiquidCrystal lcd(5, 6,7, 8, 9, 10);
+
+
+
+// Pushbutton - definition of constants and variables
+
+const int LCD_power = 0;  // the output pin where the
+                          // LCD is connected
+const int BUTTON = 1;     // the input pin where the
+                          // pushbutton is connected
+int val = 0;              // val will be used to store the state
+                          // of the input pin
+int old_val = 0;          // this variable stores the previous
+                          // value of "val"
+int state = 0;            // 0 = LED off and 1 = LED on
+
 
 
 void setup() {
@@ -95,6 +111,12 @@ void setup() {
  lcd.begin(16, 2);  // set up the LCD's number of columns and rows:
 
 
+ // SETUP Pushbutton
+
+ pinMode(LCD_power, OUTPUT); // tell Arduino LCD_power is an output
+ pinMode(BUTTON, INPUT);     // and BUTTON is an input
+
+
 }
 
 
@@ -136,10 +158,15 @@ void loop()
     Serial.print(sensors.getTempCByIndex(2));
     Serial.print(" -- sensor 3 = "); 
     Serial.print(sensors.getTempCByIndex(3));
-    Serial.print(" -- sensor 4 = "); 
-    Serial.println(sensors.getTempCByIndex(4));
-            
-    
+    Serial.print(" -- sensor 4 = ");     
+    Serial.print(sensors.getTempCByIndex(4));
+    Serial.print(" -- state = ");
+    Serial.print(state);
+    Serial.print(" -- val = ");
+    Serial.print(val);
+    Serial.print(" -- old_val = ");
+    Serial.println(old_val);
+
     // write data to SD card
     if(sd_ok)
     {  // if the SD card was successfully initialized
@@ -191,6 +218,28 @@ void loop()
     lcd.print(sensors.getTempCByIndex(3));       // Print sensor 3 value to the LCD.
     lcd.print("S5: ");                           // Print text to the LCD.
     lcd.print(sensors.getTempCByIndex(4));       // Print sensor 4 value to the LCD.
+
+
+
+
+     // Pushbutton function
+
+    val = digitalRead(BUTTON); // read input value and store it
+
+    // check if there was a transition
+    if ((val == HIGH) && (old_val == LOW)){
+      state = 1 - state;
+      delay(10);
+    }
+
+    old_val = val; // val is now old, let's store it
+
+    if (state == 1) {
+      digitalWrite(LCD_power, HIGH); // turn LED ON
+    } else {
+      digitalWrite(LCD_power, LOW);
+    }
+
  
   delay(60000);   // wait 1min
 

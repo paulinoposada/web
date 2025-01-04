@@ -1,7 +1,7 @@
-
+ 
 /*
  * Temperature logger with 
- * temp sensor DS18B20
+ * 3 temperature sensors DS18B20
  * SD card module from lctech (www.lctech-inc.com)
  */
 
@@ -15,8 +15,8 @@
 File dataLog;
 boolean sd_ok = 0;
 
-// DS18B20 temp sensor data wire is conntec to the Arduino digital pin 3
-#define ONE_WIRE_BUS 3
+// DS18B20 temp sensor data wire is conntec to the Arduino digital pin 2
+#define ONE_WIRE_BUS 2
 
 // Setup a oneWire instance to communicate with any OneWire devices
 OneWire oneWire(ONE_WIRE_BUS);
@@ -73,20 +73,38 @@ void loop()
     sensors.requestTemperatures(); 
   
     // print data on PC serial monitor
-    Serial.println(sensors.getTempCByIndex(0)); 
+    Serial.print("sensor 0 = ");
+    Serial.print(sensors.getTempCByIndex(0));
+    Serial.print(" -- sensor 1 = ");
+    Serial.print(sensors.getTempCByIndex(1));
+    Serial.print(" -- sensor 2 = "); 
+    Serial.print(sensors.getTempCByIndex(2));
+    Serial.print(" -- sensor 3 = "); 
+    Serial.print(sensors.getTempCByIndex(3));
+    Serial.print(" -- sensor 4 = "); 
+    Serial.println(sensors.getTempCByIndex(4));
+            
     
     // write data to SD card
     if(sd_ok)
     {  // if the SD card was successfully initialized
       // open Log.txt file with write permission
       dataLog = SD.open("Log.txt", FILE_WRITE);
-      dataLog.println( sensors.getTempCByIndex(0) );
+      dataLog.print( sensors.getTempCByIndex(0) );
+      dataLog.print(";");
+      dataLog.print( sensors.getTempCByIndex(1) );
+      dataLog.print(";");      
+      dataLog.print( sensors.getTempCByIndex(2) );
+      dataLog.print(";");      
+      dataLog.print( sensors.getTempCByIndex(3) );
+      dataLog.print(";");      
+      dataLog.println( sensors.getTempCByIndex(4) );
       dataLog.close();   // close the file
     }
  
   
  
-  delay(60000);   // wait 1min
+  delay(3000);   // wait 1min
 }
 
 

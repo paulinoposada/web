@@ -9,7 +9,7 @@ char array1[]=" SunFounder               ";  //the string to print on the LCD
 char array2[]="hello, world!             ";  //the string to print on the LCD
 int tim = 500;  //the value of delay time
 // initialize the library with the numbers of the interface pins
-LiquidCrystal lcd(4, 6, 10, 11, 12, 13);
+LiquidCrystal lcd(5, 6, 7, 8, 9, 10);
 /*********************************************************/
 void setup()
 {
