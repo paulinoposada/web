@@ -1,0 +1,22 @@
+
+Arduino Magnetometer
+https://www.instructables.com/Arduino-Magnetometer/
+
+Magnetic Field Strength Measurement using Arduino
+https://circuitdigest.com/microcontroller-projects/arduino-magnetic-field-measurement
+
+
+
+https://www.digikey.es/en/products/detail/allegro-microsystems-llc/A1324LUA-T/2728144
+
+https://components101.com/sensors/a3144-hall-effect-sensor
+
+https://www.akm.com/us/en/products/hall-sensor/hall-element/in-sb-ultra-high-sensitivity/hw322b/
+
+
+Venta del sensor hall Allegro A1324
+
+https://www.reichelt.com/es/es/
+https://www.reichelt.com/es/es/shop/producto/sensor_lineal_efecto_hall_sip-3-189140
+
+https://es.rs-online.com/web/p/circuitos-integrados-de-sensores-de-movimiento/7532002
