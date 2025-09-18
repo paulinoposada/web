@@ -20,7 +20,8 @@ File dataLog;
 boolean sd_ok = 0;
 int loopcount = 0;
 int sensor = 0;               // identifies each sensor 
- 
+int dl = 2000;                // delay time 2000 = 2 s
+int time_count = 0;           // time passed since sketch start
 
 // DS18B20 temp sensor data wire is conntec to the Arduino digital pin 9
 #define ONE_WIRE_BUS 9
@@ -175,12 +176,13 @@ void loop()
     lcd.print(sensors.getTempCByIndex(sensor));        // Print temp sensor 0 to the LCD
     lcd.print(" C");
     sensor = sensor + 1;
-    delay(2000);                                       // wait 2 sec showing sensor value on LCD
+    delay(dl);                                       // wait 2 sec showing sensor value on LCD
      }
 
       
-  
+  time_count = loopcount * dl;
   loopcount = loopcount + 1;
+   
   sensor = 0;
   
 }
