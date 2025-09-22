@@ -141,8 +141,9 @@ void loop()
     Serial.print(";");
      }
     
-    Serial.print("loopcount =");
-    Serial.print(loopcount);    
+    Serial.print("time = ");
+    Serial.print(time_count);    
+    Serial.print(" s");
     Serial.println();
             
 
@@ -159,8 +160,9 @@ void loop()
       dataLog.print(";");
       
         }
-      dataLog.print("loopcount =");
-      dataLog.print(loopcount);
+      dataLog.print("time = ");
+      dataLog.print(time_count);
+      dataLog.print(" s");
       dataLog.println();      
       
       dataLog.close();   // close the file
@@ -180,7 +182,7 @@ void loop()
      }
 
       
-  time_count = loopcount * dl;
+  time_count = loopcount * numberOfDevices * (dl / 1000) ;
   loopcount = loopcount + 1;
    
   sensor = 0;
