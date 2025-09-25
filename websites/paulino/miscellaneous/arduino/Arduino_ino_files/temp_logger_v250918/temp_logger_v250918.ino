@@ -198,7 +198,4 @@ void printAddress(DeviceAddress deviceAddress) {
   }
 }
 
-
- 
-
  
